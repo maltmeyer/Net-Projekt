@@ -1,0 +1,21 @@
+﻿body {
+}
+
+.center{
+    width:760px;
+    margin:0px auto;
+    
+    background-color: green;
+}
+
+.left{
+  width: 320px;
+  float: left;
+  text-align: center;
+  height: 45px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-top: 5px;
+  background: transparent;
+
+}  

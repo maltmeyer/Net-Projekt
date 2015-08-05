@@ -84,6 +84,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addIngredient.ascx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -105,8 +106,16 @@
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
     <Content Include="Web.config" />
+    <Content Include="addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addIngredient.ascx.designer.vb">
+      <DependentUpon>addIngredient.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="addIngredient.ascx.vb">
+      <DependentUpon>addIngredient.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="gerichte.aspx.designer.vb">
       <DependentUpon>gerichte.aspx</DependentUpon>
     </Compile>
@@ -146,6 +155,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="addDishControl.ascx.designer.vb">
+      <DependentUpon>addDishControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="addDishControl.ascx.vb">
+      <DependentUpon>addDishControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

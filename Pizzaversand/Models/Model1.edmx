@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\JOHANNES\SOURCE\REPOS\NET-PROJEKT\PIZZAVERSAND\APP_DATA\DATABASE1.MDF.dbo.Bestellung_Gericht' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Bestellung_Gericht">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdBestellung" />
+            <PropertyRef Name="IdWare" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdBestellung" Type="int" Nullable="false" />
+          <Property Name="IdWare" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bestellungen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kundenname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kundenadresse" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Hausnummer" Type="smallint" Nullable="false" />
+          <Property Name="Preis" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gericht_Zutaten">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdGericht" Type="int" Nullable="false" />
+          <Property Name="IdZutat" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gerichte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Beschreibung" Type="text" />
+          <Property Name="Photo" Type="image" />
+          <Property Name="Zeigen" Type="bit" Nullable="false" />
+          <Property Name="Zutaten" Type="text" Nullable="false" />
+          <Property Name="Preis" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zutaten">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Preis" Type="smallmoney" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Bestellun__IdBes__5441852A">
+          <End Role="Bestellungen" Type="Self.Bestellungen" Multiplicity="1" />
+          <End Role="Bestellung_Gericht" Type="Self.Bestellung_Gericht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bestellungen">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bestellung_Gericht">
+              <PropertyRef Name="IdBestellung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bestellun__IdWar__01142BA1">
+          <End Role="Gerichte" Type="Self.Gerichte" Multiplicity="1" />
+          <End Role="Bestellung_Gericht" Type="Self.Bestellung_Gericht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gerichte">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bestellung_Gericht">
+              <PropertyRef Name="IdWare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gericht_Z__IdZut__5165187F">
+          <End Role="Zutaten" Type="Self.Zutaten" Multiplicity="1" />
+          <End Role="Gericht_Zutaten" Type="Self.Gericht_Zutaten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zutaten">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gericht_Zutaten">
+              <PropertyRef Name="IdZutat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Bestellungen" EntityType="Self.Bestellungen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gericht_Zutaten" EntityType="Self.Gericht_Zutaten" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gerichte" EntityType="Self.Gerichte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zutaten" EntityType="Self.Zutaten" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bestellung_Gericht" EntityType="Self.Bestellung_Gericht" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Bestellung_Gericht].[Id] AS [Id], 
+    [Bestellung_Gericht].[IdBestellung] AS [IdBestellung], 
+    [Bestellung_Gericht].[IdWare] AS [IdWare]
+    FROM [dbo].[Bestellung_Gericht] AS [Bestellung_Gericht]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Bestellun__IdBes__5441852A" Association="Self.FK__Bestellun__IdBes__5441852A">
+            <End Role="Bestellungen" EntitySet="Bestellungen" />
+            <End Role="Bestellung_Gericht" EntitySet="Bestellung_Gericht" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bestellun__IdWar__01142BA1" Association="Self.FK__Bestellun__IdWar__01142BA1">
+            <End Role="Gerichte" EntitySet="Gerichte" />
+            <End Role="Bestellung_Gericht" EntitySet="Bestellung_Gericht" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gericht_Z__IdZut__5165187F" Association="Self.FK__Gericht_Z__IdZut__5165187F">
+            <End Role="Zutaten" EntitySet="Zutaten" />
+            <End Role="Gericht_Zutaten" EntitySet="Gericht_Zutaten" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bestellungen">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kundenname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kundenadresse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hausnummer" Type="Int16" Nullable="false" />
+          <Property Name="Preis" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Bestellung_Gericht" Relationship="Self.FK__Bestellun__IdBes__5441852A" FromRole="Bestellungen" ToRole="Bestellung_Gericht" />
+        </EntityType>
+        <EntityType Name="Gericht_Zutaten">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdGericht" Type="Int32" Nullable="false" />
+          <Property Name="IdZutat" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Zutaten" Relationship="Self.FK__Gericht_Z__IdZut__5165187F" FromRole="Gericht_Zutaten" ToRole="Zutaten" />
+        </EntityType>
+        <EntityType Name="Gerichte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Beschreibung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Zeigen" Type="Boolean" Nullable="false" />
+          <Property Name="Zutaten" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Preis" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Bestellung_Gericht" Relationship="Self.FK__Bestellun__IdWar__01142BA1" FromRole="Gerichte" ToRole="Bestellung_Gericht" />
+        </EntityType>
+        <EntityType Name="Zutaten">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Preis" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Gericht_Zutaten" Relationship="Self.FK__Gericht_Z__IdZut__5165187F" FromRole="Zutaten" ToRole="Gericht_Zutaten" />
+        </EntityType>
+        <EntityType Name="Bestellung_Gericht">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdBestellung" />
+            <PropertyRef Name="IdWare" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdBestellung" Type="Int32" Nullable="false" />
+          <Property Name="IdWare" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bestellungen" Relationship="Self.FK__Bestellun__IdBes__5441852A" FromRole="Bestellung_Gericht" ToRole="Bestellungen" />
+          <NavigationProperty Name="Gerichte" Relationship="Self.FK__Bestellun__IdWar__01142BA1" FromRole="Bestellung_Gericht" ToRole="Gerichte" />
+        </EntityType>
+        <Association Name="FK__Bestellun__IdBes__5441852A">
+          <End Role="Bestellungen" Type="Self.Bestellungen" Multiplicity="1" />
+          <End Role="Bestellung_Gericht" Type="Self.Bestellung_Gericht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bestellungen">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bestellung_Gericht">
+              <PropertyRef Name="IdBestellung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Gericht_Z__IdZut__5165187F">
+          <End Role="Zutaten" Type="Self.Zutaten" Multiplicity="1" />
+          <End Role="Gericht_Zutaten" Type="Self.Gericht_Zutaten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zutaten">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gericht_Zutaten">
+              <PropertyRef Name="IdZutat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bestellun__IdWar__01142BA1">
+          <End Role="Gerichte" Type="Self.Gerichte" Multiplicity="1" />
+          <End Role="Bestellung_Gericht" Type="Self.Bestellung_Gericht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gerichte">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Bestellung_Gericht">
+              <PropertyRef Name="IdWare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bestellungen" EntityType="Self.Bestellungen" />
+          <EntitySet Name="Gericht_Zutaten" EntityType="Self.Gericht_Zutaten" />
+          <EntitySet Name="Gerichte" EntityType="Self.Gerichte" />
+          <EntitySet Name="Zutaten" EntityType="Self.Zutaten" />
+          <EntitySet Name="Bestellung_Gericht" EntityType="Self.Bestellung_Gericht" />
+          <AssociationSet Name="FK__Bestellun__IdBes__5441852A" Association="Self.FK__Bestellun__IdBes__5441852A">
+            <End Role="Bestellungen" EntitySet="Bestellungen" />
+            <End Role="Bestellung_Gericht" EntitySet="Bestellung_Gericht" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Gericht_Z__IdZut__5165187F" Association="Self.FK__Gericht_Z__IdZut__5165187F">
+            <End Role="Zutaten" EntitySet="Zutaten" />
+            <End Role="Gericht_Zutaten" EntitySet="Gericht_Zutaten" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bestellun__IdWar__01142BA1" Association="Self.FK__Bestellun__IdWar__01142BA1">
+            <End Role="Gerichte" EntitySet="Gerichte" />
+            <End Role="Bestellung_Gericht" EntitySet="Bestellung_Gericht" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+          <EntitySetMapping Name="Bestellungen">
+            <EntityTypeMapping TypeName="Database1Model.Bestellungen">
+              <MappingFragment StoreEntitySet="Bestellungen">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kundenname" ColumnName="Kundenname" />
+                <ScalarProperty Name="Kundenadresse" ColumnName="Kundenadresse" />
+                <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gericht_Zutaten">
+            <EntityTypeMapping TypeName="Database1Model.Gericht_Zutaten">
+              <MappingFragment StoreEntitySet="Gericht_Zutaten">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGericht" ColumnName="IdGericht" />
+                <ScalarProperty Name="IdZutat" ColumnName="IdZutat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gerichte">
+            <EntityTypeMapping TypeName="Database1Model.Gerichte">
+              <MappingFragment StoreEntitySet="Gerichte">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Zeigen" ColumnName="Zeigen" />
+                <ScalarProperty Name="Zutaten" ColumnName="Zutaten" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zutaten">
+            <EntityTypeMapping TypeName="Database1Model.Zutaten">
+              <MappingFragment StoreEntitySet="Zutaten">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bestellung_Gericht">
+            <EntityTypeMapping TypeName="Database1Model.Bestellung_Gericht">
+              <MappingFragment StoreEntitySet="Bestellung_Gericht">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdBestellung" ColumnName="IdBestellung" />
+                <ScalarProperty Name="IdWare" ColumnName="IdWare" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -12,14 +12,6 @@
     </asp:TableRow>
     <asp:TableRow>
         <asp:TableCell>
-            <asp:Label ID="Label2" runat="server" Text="Beschreibung:"></asp:Label>
-        </asp:TableCell>
-        <asp:TableCell>
-            <asp:TextBox ID="descBox" runat="server" TextMode="MultiLine"></asp:TextBox>
-        </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>
             <asp:Label ID="Label3" runat="server" Text="Preis:"></asp:Label>
         </asp:TableCell>
         <asp:TableCell>

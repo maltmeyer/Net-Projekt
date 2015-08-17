@@ -41,24 +41,6 @@ Partial Public Class addIngredient
     Protected WithEvents ingedientNameBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''descBox control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents descBox As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''Label3 control.
     '''</summary>
     '''<remarks>

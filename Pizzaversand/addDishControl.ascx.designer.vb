@@ -95,22 +95,13 @@ Partial Public Class WebUserControl1
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''picBox control.
+    '''Upload control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents picBox As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''picButton control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents picButton As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Upload As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
     '''priceBox control.

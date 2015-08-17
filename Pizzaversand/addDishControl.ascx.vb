@@ -13,16 +13,12 @@
         Dim priceStr As String = priceBox.Text
         priceStr = priceStr.Replace(",", ".")
         Dim price As Double = Val(priceStr)
-        Dim picPath As String = picBox.Text
+        Dim picPath As String = Upload.FileName
         Dim ingredients As String = ingBox.Text
 
         Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
 
         dataset.InsertDish(dishName, description, picPath, True, ingredients, price)
-
-    End Sub
-
-    Protected Sub picButtonClick() Handles picButton.Click
 
     End Sub
 

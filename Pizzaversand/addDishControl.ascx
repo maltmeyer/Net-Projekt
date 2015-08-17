@@ -33,10 +33,7 @@
             <asp:Label ID="Label4" runat="server" Text="Foto-URL:"></asp:Label>
         </asp:TableCell>
         <asp:TableCell>
-            <asp:TextBox ID="picBox" runat="server" Width="428px"></asp:TextBox>
-        </asp:TableCell>
-        <asp:TableCell>
-            <asp:Button ID="picButton" runat="server" Text="Bild auswählen" />
+            <asp:FileUpload ID="Upload" runat="server" />
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>

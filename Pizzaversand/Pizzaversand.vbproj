@@ -110,6 +110,8 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Style.css" />
     <Content Include="TestDatenbankZutaten.aspx" />
+    <Content Include="UpdateDishControl.ascx" />
+    <Content Include="UpdateIngredientControl.ascx" />
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
@@ -123,6 +125,11 @@
     <Compile Include="addIngredientControl.ascx.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetBestellungen.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DataSetGerichte.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -188,6 +195,20 @@
       <DependentUpon>TestDatenbankZutaten.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="UpdateDishControl.ascx.designer.vb">
+      <DependentUpon>UpdateDishControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDishControl.ascx.vb">
+      <DependentUpon>UpdateDishControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateIngredientControl.ascx.designer.vb">
+      <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateIngredientControl.ascx.vb">
+      <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -210,6 +231,17 @@
     </Content>
     <Content Include="DataSets\DataSetGerichte.xsc">
       <DependentUpon>DataSetGerichte.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSets\DataSetBestellungen.xsc">
+      <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\DataSetBestellungen.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBestellungen.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="DataSets\DataSetBestellungen.xss">
+      <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Content>
     <None Include="DataSets\DataSetGerichte.xsd">
       <SubType>Designer</SubType>

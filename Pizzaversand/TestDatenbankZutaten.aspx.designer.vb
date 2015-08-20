@@ -59,6 +59,15 @@ Partial Public Class TestDatenbankZutaten
     Protected WithEvents btnShowZutaten As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''btnAddUser control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddUser As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''phZutaten control.
     '''</summary>
     '''<remarks>

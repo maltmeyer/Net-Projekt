@@ -14,7 +14,9 @@
         <asp:Button ID="btnAddZutat" runat="server" Text="Zutat hinzufügen" />
         <asp:Button ID="btnShowZutaten" runat="server" Text="Zutat anzeigen" />
         <br />
+        <asp:Button ID="btnAddUser" runat="server" Text="Button" />
         <asp:PlaceHolder ID="phZutaten" runat="server"></asp:PlaceHolder>
+
     </div>
     </form>
 </body>

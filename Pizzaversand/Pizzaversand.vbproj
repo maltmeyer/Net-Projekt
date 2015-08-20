@@ -94,8 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addIngredientControl.ascx" />
+    <Content Include="App_Data\ASPNETDB.mdf" />
+    <Content Include="App_Data\ASPNETDB_log.ldf" />
     <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -115,7 +119,9 @@
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>

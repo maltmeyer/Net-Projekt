@@ -5,6 +5,12 @@
 
     End Sub
 
+    Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
+        Dim member As MembershipUser
+        member = Membership.CreateUser("Markus", "passwotT!", "altmeyer.m@gmx.de")
+
+    End Sub
+
     Private Sub btnAddZutat_Click(sender As Object, e As EventArgs) Handles btnAddZutat.Click
         Dim name As String = txtName.Text
         Dim preisStr As String = txtPreis.Text

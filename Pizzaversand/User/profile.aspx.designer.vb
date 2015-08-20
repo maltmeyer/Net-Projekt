@@ -11,16 +11,25 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class register
+Partial Public Class profile
     
     '''<summary>
-    '''CreateUserWizard1 control.
+    '''lblHeader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CreateUserWizard1 As Global.System.Web.UI.WebControls.CreateUserWizard
+    Protected WithEvents lblHeader As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''lblGespeichert control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblGespeichert As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''rbH control.
@@ -102,4 +111,22 @@ Partial Public Class register
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTelefon As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''btnSave control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''ChangePassword1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ChangePassword1 As Global.System.Web.UI.WebControls.ChangePassword
 End Class

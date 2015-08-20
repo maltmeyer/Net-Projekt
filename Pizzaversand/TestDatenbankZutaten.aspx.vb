@@ -6,8 +6,22 @@
     End Sub
 
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
-        Dim member As MembershipUser
-        member = Membership.CreateUser("Markus", "passwotT!", "altmeyer.m@gmx.de")
+        'Dim member As MembershipUser
+        'member = Membership.CreateUser("User2", "passwotT!", "user2.m@gmx.de")
+        'Dim roleName As String = "roleAdmin"
+        'If (Not Roles.RoleExists(roleName)) Then
+        '    Roles.CreateRole(roleName)
+        'End If
+        'Roles.AddUserToRole("user1", roleName)
+
+        Dim member As MembershipUser = Membership.GetUser(True)
+        If Not IsNothing(member) Then
+            Dim name As String
+            name = HttpContext.Current.Profile.GetPropertyValue("vorname")
+            MsgBox(name)
+        End If
+
+
 
     End Sub
 

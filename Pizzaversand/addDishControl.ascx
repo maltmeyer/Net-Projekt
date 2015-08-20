@@ -38,10 +38,7 @@
     </asp:TableRow>
     <asp:TableRow>
         <asp:TableCell>
-            <asp:Label runat="server" Text="Preis:"></asp:Label>
-        </asp:TableCell>
-        <asp:TableCell>
-            <asp:TextBox ID="priceBox" runat="server" Width="428px"></asp:TextBox>
+            <asp:CheckBox ID="showCheck" runat="server" Text="Eintrag in Karte anzeigen"/>
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>

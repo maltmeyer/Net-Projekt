@@ -104,13 +104,13 @@ Partial Public Class WebUserControl1
     Protected WithEvents Upload As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
-    '''priceBox control.
+    '''showCheck control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents priceBox As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents showCheck As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
     '''saveDishButton control.

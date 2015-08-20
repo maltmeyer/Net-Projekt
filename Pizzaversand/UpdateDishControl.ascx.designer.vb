@@ -158,6 +158,15 @@ Partial Public Class UpdateDishControl
     Protected WithEvents picUpload As Global.System.Web.UI.WebControls.FileUpload
     
     '''<summary>
+    '''showCheck control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents showCheck As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
     '''updateButton control.
     '''</summary>
     '''<remarks>

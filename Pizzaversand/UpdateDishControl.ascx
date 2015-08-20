@@ -61,6 +61,11 @@
     </asp:TableRow>
     <asp:TableRow>
         <asp:TableCell>
+            <asp:CheckBox ID="showCheck" runat="server" Text="Eintrag in Karte anzeigen" />
+        </asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>
             <asp:Button ID="updateButton" runat="server" Text="Gericht aktualisieren" />
         </asp:TableCell>
     </asp:TableRow>

@@ -9,7 +9,7 @@ Public Class WebUserControl2
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-        Dim datatable As Data.DataTable = DataSet.GetData()
+        Dim datatable As Data.DataTable = dataset.GetData()
 
         If datatable.Rows.Count > 0 Then
             ingredients.Controls.Clear()

@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addIngredientControl.ascx" />
+    <Content Include="admin\default.aspx" />
     <Content Include="App_Data\ASPNETDB.mdf" />
     <Content Include="App_Data\ASPNETDB_log.ldf" />
     <Content Include="App_Data\Database1.mdf" />
@@ -107,6 +108,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gerichte.aspx" />
     <Content Include="home.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -131,6 +133,13 @@
     <Compile Include="addIngredientControl.ascx.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DataSets\DataSetBestellungen.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -194,6 +203,13 @@
       <DependentUpon>addDishControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="register.aspx.designer.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="TestDatenbankZutaten.aspx.designer.vb">
       <DependentUpon>TestDatenbankZutaten.aspx</DependentUpon>
     </Compile>
@@ -241,6 +257,7 @@
     <Content Include="DataSets\DataSetBestellungen.xsc">
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Content>
+    <Content Include="admin\Web.config" />
     <None Include="DataSets\DataSetBestellungen.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>

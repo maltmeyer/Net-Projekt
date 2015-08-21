@@ -21,14 +21,14 @@
                                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
-                         <tr> <!-- Email -->
+                         <%--<tr> <!-- Email -->
                             <td align="right" style="height: 42px">
                                 <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label>
                             </td>
                             <td style="height: 42px">
                                 <asp:TextBox ID="Email" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="E-mail is required." ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
-                            </td>
+                            </td>--%>
                         </tr>
                         <tr> <!-- Password -->
                             <td align="right">

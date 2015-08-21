@@ -14,7 +14,10 @@
 
 
     Protected Sub CreateUserWizard1_CreatedUser(sender As Object, e As EventArgs) Handles CreateUserWizard1.CreatedUser
+        Dim txtUsername As TextBox = CType(CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName"), TextBox)
+        Dim user As MembershipUser = Membership.GetUser(txtUsername.Text)
 
+        Roles.AddUserToRole(user.UserName, "user")
     End Sub
 
     Private Sub setValue(ByVal propertyName As String, ByVal value As Object)
@@ -22,10 +25,6 @@
     End Sub
 
     Private Sub CreateUserWizard1_FinishButtonClick(sender As Object, e As WizardNavigationEventArgs) Handles CreateUserWizard1.FinishButtonClick
-        Dim txtUsername As TextBox = CType(CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName"), TextBox)
-
-        Dim user As MembershipUser = Membership.GetUser(txtUsername.Text)
-
         'Profile.vorname funktioniert in einem Projekt nicht, nur Webseite
         setValue("anrede", rbH.Checked)
         setValue("vorname", txtVorname.Text)
@@ -36,6 +35,9 @@
         setValue("ort", txtOrt.Text)
         setValue("telefon", txtTelefon.Text)
         HttpContext.Current.Profile.Save()
+
+
+
     End Sub
 
     Protected Sub ContinueButton_Click1(sender As Object, e As EventArgs)

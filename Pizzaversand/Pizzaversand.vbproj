@@ -93,7 +93,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addIngredientControl.ascx" />
+    <Content Include="Controls\addIngredientControl.ascx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\register.aspx" />
     <Content Include="App_Data\ASPNETDB.mdf" />
@@ -119,8 +119,8 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Style.css" />
     <Content Include="TestDatenbankZutaten.aspx" />
-    <Content Include="UpdateDishControl.ascx" />
-    <Content Include="UpdateIngredientControl.ascx" />
+    <Content Include="Controls\UpdateDishControl.ascx" />
+    <Content Include="Controls\UpdateIngredientControl.ascx" />
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
@@ -128,13 +128,13 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="addDishControl.ascx" />
+    <Content Include="Controls\addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addIngredientControl.ascx.designer.vb">
+    <Compile Include="Controls\addIngredientControl.ascx.designer.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="addIngredientControl.ascx.vb">
+    <Compile Include="Controls\addIngredientControl.ascx.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -217,10 +217,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="addDishControl.ascx.designer.vb">
+    <Compile Include="Controls\addDishControl.ascx.designer.vb">
       <DependentUpon>addDishControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="addDishControl.ascx.vb">
+    <Compile Include="Controls\addDishControl.ascx.vb">
       <DependentUpon>addDishControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -238,17 +238,17 @@
       <DependentUpon>TestDatenbankZutaten.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="UpdateDishControl.ascx.designer.vb">
+    <Compile Include="Controls\UpdateDishControl.ascx.designer.vb">
       <DependentUpon>UpdateDishControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDishControl.ascx.vb">
+    <Compile Include="Controls\UpdateDishControl.ascx.vb">
       <DependentUpon>UpdateDishControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UpdateIngredientControl.ascx.designer.vb">
+    <Compile Include="Controls\UpdateIngredientControl.ascx.designer.vb">
       <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateIngredientControl.ascx.vb">
+    <Compile Include="Controls\UpdateIngredientControl.ascx.vb">
       <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

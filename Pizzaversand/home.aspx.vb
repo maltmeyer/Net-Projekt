@@ -91,6 +91,13 @@
 
         End If
 
+        'Dim user As MembershipUser = Membership.GetUser(True)
+        'If Not IsNothing(user) Then
+        '    Dim lbl As Label
+        '    lbl = CType(Master.FindControl("lblUsername"), Label)
+        '    lbl.Text = user.UserName
+
+        'End If
 
 
     End Sub

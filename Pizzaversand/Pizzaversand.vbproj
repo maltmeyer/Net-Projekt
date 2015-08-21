@@ -94,15 +94,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addIngredientControl.ascx" />
+    <Content Include="admin\default.aspx" />
+    <Content Include="admin\register.aspx" />
+    <Content Include="App_Data\ASPNETDB.mdf" />
+    <Content Include="App_Data\ASPNETDB_log.ldf" />
     <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gerichte.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -115,7 +124,10 @@
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
-    <Content Include="Web.config" />
+    <Content Include="User\profile.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +137,20 @@
     <Compile Include="addIngredientControl.ascx.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\register.aspx.designer.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\register.aspx.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DataSets\DataSetBestellungen.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -148,11 +174,21 @@
       <DependentUpon>gerichte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.designer.vb">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.vb">
       <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.vb">
@@ -188,6 +224,13 @@
       <DependentUpon>addDishControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="register.aspx.designer.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="TestDatenbankZutaten.aspx.designer.vb">
       <DependentUpon>TestDatenbankZutaten.aspx</DependentUpon>
     </Compile>
@@ -208,6 +251,13 @@
     <Compile Include="UpdateIngredientControl.ascx.vb">
       <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\profile.aspx.designer.vb">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\profile.aspx.vb">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +285,7 @@
     <Content Include="DataSets\DataSetBestellungen.xsc">
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Content>
+    <Content Include="admin\Web.config" />
     <None Include="DataSets\DataSetBestellungen.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -269,13 +320,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <Content Include="packages.config" />
+    <Content Include="User\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="Web.sitemap" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="website.publishproj" />
   </ItemGroup>
   <ItemGroup>

@@ -11,68 +11,95 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TestDatenbankZutaten
+Partial Public Class register
     
     '''<summary>
-    '''form1 control.
+    '''CreateUserWizard1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents CreateUserWizard1 As Global.System.Web.UI.WebControls.CreateUserWizard
     
     '''<summary>
-    '''txtName control.
+    '''rbH control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents rbH As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''txtPreis control.
+    '''rbF control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPreis As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents rbF As Global.System.Web.UI.WebControls.RadioButton
     
     '''<summary>
-    '''btnAddZutat control.
+    '''txtVorname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAddZutat As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtVorname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btnShowZutaten control.
+    '''txtNachname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnShowZutaten As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtNachname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''btnAddUser control.
+    '''txtStraße control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAddUser As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtStraße As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''phZutaten control.
+    '''txtHausnummer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents phZutaten As Global.System.Web.UI.WebControls.PlaceHolder
+    Protected WithEvents txtHausnummer As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtPLZ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPLZ As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtOrt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtOrt As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txtTelefon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtTelefon As Global.System.Web.UI.WebControls.TextBox
 End Class

@@ -46,9 +46,7 @@ Public Class WebUserControl2
 
     Private Sub updateButton_Click(sender As Object, e As EventArgs) Handles updateButton.Click
         Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-        Dim pricestr As String = priceBox.Text
-        pricestr = pricestr.Replace(",", ".")
-        Dim price As Double = Val(pricestr)
+        Dim price As Double = Val(priceBox.Text)
         dataset.IngredientUpdate(nameBox.Text, price, idOfIngredient)
     End Sub
 

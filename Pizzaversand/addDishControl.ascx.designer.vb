@@ -14,6 +14,33 @@ Option Explicit On
 Partial Public Class WebUserControl1
     
     '''<summary>
+    '''nameValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents nameValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''ingredientsValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ingredientsValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''ingredientsContentsValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ingredientsContentsValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''Table1 control.
     '''</summary>
     '''<remarks>

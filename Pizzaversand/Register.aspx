@@ -3,7 +3,7 @@
 
 
 
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/home.aspx">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/home.aspx" RequireEmail="False">
         <WizardSteps>
             <asp:CreateUserWizardStep runat="server">
                 <ContentTemplate>

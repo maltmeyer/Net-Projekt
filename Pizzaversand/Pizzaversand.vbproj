@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="addIngredientControl.ascx" />
     <Content Include="admin\default.aspx" />
+    <Content Include="admin\register.aspx" />
     <Content Include="App_Data\ASPNETDB.mdf" />
     <Content Include="App_Data\ASPNETDB_log.ldf" />
     <Content Include="App_Data\Database1.mdf" />
@@ -107,6 +108,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gerichte.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="login.aspx" />
     <Content Include="register.aspx" />
@@ -143,6 +145,13 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\register.aspx.designer.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\register.aspx.vb">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="DataSets\DataSetBestellungen.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,6 +173,9 @@
     <Compile Include="gerichte.aspx.vb">
       <DependentUpon>gerichte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="home.aspx.designer.vb">
       <DependentUpon>home.aspx</DependentUpon>

@@ -22,7 +22,6 @@
     End Sub
 
     Private Sub CreateUserWizard1_FinishButtonClick(sender As Object, e As WizardNavigationEventArgs) Handles CreateUserWizard1.FinishButtonClick
-        MsgBox(CreateUserWizard1.ActiveStepIndex)
         Dim txtUsername As TextBox = CType(CreateUserWizard1.CreateUserStep.ContentTemplateContainer.FindControl("UserName"), TextBox)
 
         Dim user As MembershipUser = Membership.GetUser(txtUsername.Text)

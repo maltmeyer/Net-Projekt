@@ -129,4 +129,13 @@ Partial Public Class WebUserControl2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents updateButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''priceValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents priceValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
 End Class

@@ -49,3 +49,5 @@
         </asp:TableCell>
     </asp:TableRow>
 </asp:Table>
+<asp:RegularExpressionValidator ID="priceValidator" runat="server" ErrorMessage="Preis entspricht nicht dem vorgegebenen Format (2 Dezimalstellen, Trennzeichen ist Punkt)"
+    ValidationExpression="[0-9]\.[0-9]{2}" ControlToValidate="priceBox"></asp:RegularExpressionValidator>

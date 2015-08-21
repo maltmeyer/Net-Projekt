@@ -10,9 +10,7 @@
     Protected Sub onConfirmClicked() Handles confirmButton.Click
 
         Dim name As String = ingedientNameBox.Text
-        Dim priceStr As String = priceBox.Text
-        priceStr = priceStr.Replace(",", ".")
-        Dim price As Double = Val(priceStr)
+        Dim price As Double = Val(priceBox.Text)
 
         Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
 

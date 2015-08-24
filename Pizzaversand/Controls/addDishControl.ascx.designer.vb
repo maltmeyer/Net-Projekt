@@ -41,6 +41,15 @@ Partial Public Class WebUserControl1
     Protected WithEvents ingredientsContentsValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
+    '''phIngredients control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents phIngredients As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
     '''Table1 control.
     '''</summary>
     '''<remarks>
@@ -102,15 +111,6 @@ Partial Public Class WebUserControl1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ingBox As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''ingedientButton control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ingedientButton As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Label4 control.

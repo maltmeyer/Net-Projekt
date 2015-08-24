@@ -1,9 +1,10 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="addDishControl.ascx.vb" Inherits="Pizzaversand.WebUserControl1" %>
 
-<asp:RequiredFieldValidator ID="nameValidator" runat="server" ErrorMessage="Bitte Namen angeben" ControlToValidate="dishText"></asp:RequiredFieldValidator>
-<asp:RequiredFieldValidator ID="ingredientsValidator" runat="server" ErrorMessage="Keine Zutatenliste angegeben" ControlToValidate="ingBox"></asp:RequiredFieldValidator>
+<asp:RequiredFieldValidator ID="nameValidator" runat="server" ErrorMessage="Bitte Namen angeben" ControlToValidate="dishText"></asp:RequiredFieldValidator><br />
+<asp:RequiredFieldValidator ID="ingredientsValidator" runat="server" ErrorMessage="Keine Zutatenliste angegeben" ControlToValidate="ingBox"></asp:RequiredFieldValidator><br />
 <asp:RegularExpressionValidator ID="ingredientsContentsValidator" runat="server" ErrorMessage="Zutatenliste muss aus Zahlen und Kommas bestehen"
-    ControlToValidate="ingBox" ValidationExpression="([0-9]*, )*"></asp:RegularExpressionValidator>
+    ControlToValidate="ingBox" ValidationExpression="([0-9]*, )*"></asp:RegularExpressionValidator><br />
+<asp:PlaceHolder ID="phIngredients" runat="server"></asp:PlaceHolder><br />
 
 <asp:Table ID="Table1" runat="server">
     <asp:TableRow>
@@ -28,9 +29,6 @@
         </asp:TableCell>
         <asp:TableCell>
             <asp:TextBox ID="ingBox" runat="server" Width="428px"></asp:TextBox>
-        </asp:TableCell>
-        <asp:TableCell>
-            <asp:Button ID="ingedientButton" runat="server" Text="Hinzufügen" />
         </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>

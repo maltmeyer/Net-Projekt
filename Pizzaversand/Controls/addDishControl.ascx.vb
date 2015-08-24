@@ -4,7 +4,17 @@
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim ingDataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
+        Dim datatable As Data.DataTable = ingDataset.GetData()
 
+        If datatable.Rows.Count > 0 Then
+            phIngredients.Controls.Clear()
+            For Each row As DataSetZutaten.ZutatenRow In datatable.Rows
+                Dim id As String = String.Format("0:00", row.Id)
+                Dim price As String = String.Format("0:0.00", row.Preis)
+                phIngredients.Controls.Add(New LiteralControl(id & " - " & row.Name & " - " & price & "€<br/>"))
+            Next
+        End If
     End Sub
 
     Protected Sub saveDishButtonClick() Handles saveDishButton.Click
@@ -17,10 +27,6 @@
         Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
 
         dataset.InsertDish(dishName, description, picPath, showCheck.Enabled, ingredients, price)
-
-    End Sub
-
-    Protected Sub ingButtonClick() Handles ingedientButton.Click
 
     End Sub
 

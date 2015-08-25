@@ -122,6 +122,8 @@
     <Content Include="TestDatenbankZutaten.aspx" />
     <Content Include="Controls\UpdateDishControl.ascx" />
     <Content Include="Controls\UpdateIngredientControl.ascx" />
+    <Content Include="updateDishPage.aspx" />
+    <Content Include="updateIngredientPage.aspx" />
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
@@ -260,11 +262,32 @@
       <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="updateDishPage.aspx.designer.vb">
+      <DependentUpon>updateDishPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="updateDishPage.aspx.vb">
+      <DependentUpon>updateDishPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="updateIngredientPage.aspx.designer.vb">
+      <DependentUpon>updateIngredientPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="updateIngredientPage.aspx.vb">
+      <DependentUpon>updateIngredientPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="User\profile.aspx.designer.vb">
       <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\profile.aspx.vb">
       <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="addDishPage.aspx.designer.vb">
+      <DependentUpon>addDishPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addDishPage.aspx.vb">
+      <DependentUpon>addDishPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
@@ -338,6 +361,7 @@
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="addDishPage.aspx" />
     <Content Include="website.publishproj" />
   </ItemGroup>
   <ItemGroup>

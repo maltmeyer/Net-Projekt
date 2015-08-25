@@ -23,15 +23,6 @@ Partial Public Class WebUserControl2
     Protected WithEvents ingredients As Global.System.Web.UI.WebControls.PlaceHolder
     
     '''<summary>
-    '''Table1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
-    
-    '''<summary>
     '''Label2 control.
     '''</summary>
     '''<remarks>
@@ -68,15 +59,6 @@ Partial Public Class WebUserControl2
     Protected WithEvents getButton As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Table2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Table2 As Global.System.Web.UI.WebControls.Table
-    
-    '''<summary>
     '''Label3 control.
     '''</summary>
     '''<remarks>
@@ -104,13 +86,13 @@ Partial Public Class WebUserControl2
     Protected WithEvents nameBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label5 control.
+    '''priceValidator control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents priceValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''priceBox control.
@@ -129,13 +111,4 @@ Partial Public Class WebUserControl2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents updateButton As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''priceValidator control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents priceValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
 End Class

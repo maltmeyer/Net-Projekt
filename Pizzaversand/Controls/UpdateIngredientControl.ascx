@@ -1,53 +1,51 @@
 ﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="UpdateIngredientControl.ascx.vb" Inherits="Pizzaversand.WebUserControl2" %>
 <asp:PlaceHolder ID="ingredients" runat="server"></asp:PlaceHolder>
 
-<asp:Table ID="Table1" runat="server">
-    <asp:TableHeaderRow>
-        <asp:TableHeaderCell>
+<table>
+    <tr>
+        <th>
             <asp:Label ID="Label2" runat="server" Text="Zutatenwahl über ID"></asp:Label>
-
-        </asp:TableHeaderCell>
-    </asp:TableHeaderRow>
-    <asp:TableRow>
-        <asp:TableCell>
+        </th>
+    </tr>
+    <tr>
+        <td>
             <asp:Label ID="Label1" runat="server" Text="ZutatenId:"></asp:Label>
-        </asp:TableCell>
-        <asp:TableCell>
+        </td>
+        <td>
             <asp:TextBox ID="idBox" runat="server" TextMode="Number"></asp:TextBox>
-        </asp:TableCell>
-        <asp:TableCell>
+        </td>
+        <td>
             <asp:Button ID="getButton" runat="server" Text="Laden" />
-        </asp:TableCell>
-    </asp:TableRow>
-</asp:Table>
+        </td>
+    </tr>
+</table>
 <br />
-<asp:Table ID="Table2" runat="server" Visible="False">
-    <asp:TableHeaderRow>
-        <asp:TableHeaderCell>
+<table>
+    <tr>
+        <th>
             <asp:Label ID="Label3" runat="server" Text="Gewählte Zutat bearbeiten"></asp:Label>
-        </asp:TableHeaderCell>
-    </asp:TableHeaderRow>
-    <asp:TableRow>
-        <asp:TableCell>
+        </th>
+    </tr>
+    <tr>
+        <td>
             <asp:Label ID="Label4" runat="server" Text="Name der Zutat:"></asp:Label>
-        </asp:TableCell>
-        <asp:TableCell>
+        </td>
+        <td>
             <asp:TextBox ID="nameBox" runat="server"></asp:TextBox>
-        </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>
-            <asp:Label ID="Label5" runat="server" Text="Preis der Zutat:"></asp:Label>
-        </asp:TableCell>
-        <asp:TableCell>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <asp:RegularExpressionValidator ID="priceValidator" runat="server" Text="Preis (Format: 0.00)" ErrorMessage="Preis entspricht nicht dem vorgegebenen Format (2 Dezimalstellen, Trennzeichen ist Punkt)"
+                ValidationExpression="[0-9]\.[0-9]{2}" ControlToValidate="priceBox" />
+        </td>
+        <td>
             <asp:TextBox ID="priceBox" runat="server"></asp:TextBox>
-        </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-        <asp:TableCell>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <asp:Button ID="updateButton" runat="server" Text="Update" />
-        </asp:TableCell>
-    </asp:TableRow>
-</asp:Table>
-<asp:RegularExpressionValidator ID="priceValidator" runat="server" ErrorMessage="Preis entspricht nicht dem vorgegebenen Format (2 Dezimalstellen, Trennzeichen ist Punkt)"
-    ValidationExpression="[0-9]\.[0-9]{2}" ControlToValidate="priceBox"></asp:RegularExpressionValidator>
+        </td>
+    </tr>
+</table>

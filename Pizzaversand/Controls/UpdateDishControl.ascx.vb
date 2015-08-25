@@ -23,7 +23,6 @@
         Dim datatable As Data.DataTable = dataset.GetEntry(id)
 
         If datatable.Rows.Count > 0 Then
-            Table2.Visible = True
             Label3.Text = "Daten des Gerichtes"
             For Each row As DataSetGerichte.GerichteRow In datatable.Rows
                 identifier = Val(row.Id)
@@ -34,7 +33,6 @@
                 showCheck.Enabled = row.Zeigen
             Next
         Else
-            Table2.Visible = True
             Label3.Text = "Keine gültige ID angegeben."
         End If
     End Sub

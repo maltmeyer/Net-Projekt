@@ -14,33 +14,6 @@ Option Explicit On
 Partial Public Class WebUserControl1
     
     '''<summary>
-    '''nameValidator control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents nameValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''ingredientsValidator control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ingredientsValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''ingredientsContentsValidator control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ingredientsContentsValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
     '''phIngredients control.
     '''</summary>
     '''<remarks>
@@ -50,22 +23,13 @@ Partial Public Class WebUserControl1
     Protected WithEvents phIngredients As Global.System.Web.UI.WebControls.PlaceHolder
     
     '''<summary>
-    '''Table1 control.
+    '''nameValidator control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Table1 As Global.System.Web.UI.WebControls.Table
-    
-    '''<summary>
-    '''Label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents nameValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''dishText control.
@@ -95,13 +59,22 @@ Partial Public Class WebUserControl1
     Protected WithEvents descBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Label3 control.
+    '''ingredientsValidator control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ingredientsValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''ingredientsContentsValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ingredientsContentsValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''ingBox control.

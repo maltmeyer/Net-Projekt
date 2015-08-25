@@ -93,6 +93,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addIngredientsPage.aspx" />
     <Content Include="Controls\addIngredientControl.ascx" />
     <Content Include="admin\default.aspx" />
     <Content Include="admin\register.aspx" />
@@ -131,6 +132,13 @@
     <Content Include="Controls\addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addIngredientsPage.aspx.designer.vb">
+      <DependentUpon>addIngredientsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addIngredientsPage.aspx.vb">
+      <DependentUpon>addIngredientsPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Controls\addIngredientControl.ascx.designer.vb">
       <DependentUpon>addIngredientControl.ascx</DependentUpon>
     </Compile>

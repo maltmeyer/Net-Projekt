@@ -33,12 +33,10 @@ Public Class WebUserControl2
                 name = row.Name
                 price = String.Format("{0:0.00}", row.Preis)
             Next
-            Table2.Visible = True
             Label3.Text = "Gewählte Zutat bearbeiten"
             nameBox.Text = name
             priceBox.Text = price
         Else
-            Table2.Visible = True
             Label3.Text = "Id nicht vorhanden, bitte andere Zutat auswählen"
         End If
 

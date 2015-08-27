@@ -11,14 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class updateIngredientPage
+Partial Public Class WebForm1
     
     '''<summary>
-    '''updateIngContr control.
+    '''adDishCon control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents updateIngContr As Global.Pizzaversand.WebUserControl2
+    Protected WithEvents adDishCon As Global.Pizzaversand.WebUserControl1
 End Class

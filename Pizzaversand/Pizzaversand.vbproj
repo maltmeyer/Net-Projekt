@@ -93,6 +93,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addDishPage.aspx" />
     <Content Include="addIngredientsPage.aspx" />
     <Content Include="Controls\addIngredientControl.ascx" />
     <Content Include="admin\default.aspx" />
@@ -134,6 +135,13 @@
     <Content Include="Controls\addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addDishPage.aspx.designer.vb">
+      <DependentUpon>addDishPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addDishPage.aspx.vb">
+      <DependentUpon>addDishPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="addIngredientsPage.aspx.designer.vb">
       <DependentUpon>addIngredientsPage.aspx</DependentUpon>
     </Compile>
@@ -283,13 +291,6 @@
       <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="addDishPage.aspx.designer.vb">
-      <DependentUpon>addDishPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="addDishPage.aspx.vb">
-      <DependentUpon>addDishPage.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -361,7 +362,6 @@
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="addDishPage.aspx" />
     <Content Include="website.publishproj" />
   </ItemGroup>
   <ItemGroup>

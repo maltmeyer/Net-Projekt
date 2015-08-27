@@ -24,9 +24,18 @@
         Dim picPath As String = Upload.FileName
         Dim ingredients As String = ingBox.Text
 
+
         Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
 
-        dataset.InsertDish(dishName, description, picPath, showCheck.Enabled, ingredients, price)
+        dataset.InsertDish(dishName, description, picPath, showCheck.Enabled, price)
+        Dim id As Integer
+        Dim idRow As Data.DataTable = dataset.GetId(dishName)
+        If idRow.Rows.Count > 0 & idRow.Rows.Count < 2 Then
+            For Each row As DataSetGerichte.GerichteRow In idRow.Rows
+                id = row.Id
+            Next
+        End If
+        generateConnections(ingredients, id)
 
     End Sub
 
@@ -40,5 +49,13 @@
         price = price + (price * (5 / 100))
         Return price
     End Function
+
+    Private Sub generateConnections(ByVal ing As String, ByVal id As Integer)
+        Dim array() As String = Split(ing, ", ")
+        Dim dataset As New DataSetConnectionGerichtZutatTableAdapters.Gericht_ZutatenTableAdapter
+        For Each entry As String In array
+            dataset.InsetConnection(id, Val(entry))
+        Next
+    End Sub
 
 End Class

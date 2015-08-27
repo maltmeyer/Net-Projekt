@@ -175,6 +175,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetConnectionGerichtZutat.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConnectionGerichtZutat.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetGerichte.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -325,6 +330,17 @@
     </None>
     <Content Include="DataSets\DataSetBestellungen.xss">
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSets\DataSetConnectionGerichtZutat.xsc">
+      <DependentUpon>DataSetConnectionGerichtZutat.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\DataSetConnectionGerichtZutat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConnectionGerichtZutat.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="DataSets\DataSetConnectionGerichtZutat.xss">
+      <DependentUpon>DataSetConnectionGerichtZutat.xsd</DependentUpon>
     </Content>
     <None Include="DataSets\DataSetGerichte.xsd">
       <SubType>Designer</SubType>

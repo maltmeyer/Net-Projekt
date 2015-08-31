@@ -42,6 +42,18 @@
 
     End Sub
 
+    Private Sub btnGetGerichte_Click(sender As Object, e As EventArgs) Handles btnGetGerichte.Click
+        Dim manager As DatenbankManager = DatenbankManager.Instance
+        Dim gericht As Gericht = manager.getGerichte()(0)
+
+        Dim ware As New Ware(gericht, 2)
+
+        Dim bestellung As New Bestellung("Markus", "Altmeyer", 60, 13, "Herr", 66687, "Im Flürchen 60", "Nunkirchen", "068746558")
+        bestellung.waren.Add(ware)
+        manager.neueBestellung(bestellung)
+
+    End Sub
+
     Private Sub btnShowZutaten_Click(sender As Object, e As EventArgs) Handles btnShowZutaten.Click
         Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
 

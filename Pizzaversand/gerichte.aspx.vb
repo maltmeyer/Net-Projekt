@@ -2,7 +2,8 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ladeGerichte1ProReihe()
+        'ladeGerichte1ProReihe()
+        ladeGerichte()
     End Sub
 
     ''' <summary>
@@ -71,6 +72,79 @@
 
     End Sub
 
+
+    Private Sub ladeGerichte()
+        Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
+        Dim datatable As Data.DataTable = dataset.GetData
+        Dim datasetZutaten As New DataSetZutatenTableAdapters.ZutatenTableAdapter
+
+        Dim img As Image
+        Dim label As LiteralControl
+        Dim btnKaufen As Button
+
+        If datatable.Rows.Count > 0 Then
+            phGerichte.Controls.Clear()
+            addTag("<Table>")
+            For Each row As DataSetGerichte.GerichteRow In datatable.Rows
+                img = New Image
+                img.ImageUrl = "~/UserUploadImages/" & row.Photo
+                img.CssClass = "imgPanelGerichte"
+
+                label = New LiteralControl
+                label.Text = row.Name
+
+                btnKaufen = New Button
+                btnKaufen.Text = "In den Warenkorb"
+                btnKaufen.CssClass = "btn btn-default"
+
+                addTag("<tr>")
+                addTag("<td>")
+                addTag("<div   class=""abstand"">")
+                phGerichte.Controls.Add(img)
+                addTag("</div>")
+                addTag("<td>")
+                addTag("<div class=""abstand2"">")
+                addTag("<h3>" & row.Name & "</h3>")
+                addTag("<p>" & row.Beschreibung & "</p>")
+                addTag("<h4>" & "Zutaten" & "</h4>")
+
+
+
+
+                For Each rowZutatID As DataSetConnectionGerichtZutat.Gericht_ZutatenRow In getZutaten(row.Id).Rows
+                    Dim datatableZutat As Data.DataTable = datasetZutaten.getIngredient(rowZutatID.IdZutat)
+                    For Each rowZutat As DataSetZutaten.ZutatenRow In datatableZutat.Rows
+                        addTag("<p>" & rowZutat.Name & "</p>")
+                    Next
+                Next
+
+
+
+                addTag("<p><b>" & String.Format("{0:0.00}", row.Preis) & " € </b></p>")
+                phGerichte.Controls.Add(btnKaufen)
+                addTag("</div>")
+                addTag("</td>")
+                addTag("</tr>")
+
+            Next
+            addTag("</table>")
+        End If
+    End Sub
+
+    Private Function getZutaten(ByVal gerichtID As Integer) As Data.DataTable
+        Dim dataset As New DataSetConnectionGerichtZutatTableAdapters.Gericht_ZutatenTableAdapter
+        Dim datatable As Data.DataTable = dataset.getIngredients(gerichtID)
+        Return datatable
+    End Function
+
+    ''' <summary>
+    ''' Fügt ein neues html tag in phGerichte ein
+    ''' </summary>
+    ''' <param name="tag"></param>
+    Private Sub addTag(ByVal tag As String)
+        phGerichte.Controls.Add(New LiteralControl(tag))
+    End Sub
+
     Public Sub ladeGerichte1ProReihe()
         Dim liste As List(Of String)
         Dim imgFolderPath As String = Server.MapPath("~/UserUploadImages/")
@@ -93,17 +167,17 @@
 
             btnKaufen = New Button
             btnKaufen.Text = "In den Warenkorb"
-            btnKaufen.CssClass = "btn btn-default"
+            btnKaufen.CssClass = "btn btn-Default"
 
             phGerichte.Controls.Add(New LiteralControl("<tr>"))
             phGerichte.Controls.Add(New LiteralControl("<td>"))
-            phGerichte.Controls.Add(New LiteralControl("<div   class=""abstand"">"))
+            phGerichte.Controls.Add(New LiteralControl("<div   Class=""abstand"">"))
             phGerichte.Controls.Add(img)
             phGerichte.Controls.Add(New LiteralControl("</div"))
             phGerichte.Controls.Add(New LiteralControl("</td>"))
 
             phGerichte.Controls.Add(New LiteralControl("<td>"))
-            phGerichte.Controls.Add(New LiteralControl("<div class=""abstand2"">"))
+            phGerichte.Controls.Add(New LiteralControl("<div Class=""abstand2"">"))
             phGerichte.Controls.Add(New LiteralControl("<h3>" & "Super Salami Piza" & "</h3>"))
 
             phGerichte.Controls.Add(New LiteralControl("<p>" & _
@@ -116,7 +190,7 @@
                                                        "<li>Salami</li>" & _
                                                        "<li>Käse</li>" & _
                                                        "</ul>"))
-            phGerichte.Controls.Add(New LiteralControl("<p><b>" & "6,99€" & "</b></p>"))
+            phGerichte.Controls.Add(New LiteralControl("<p><b>" & "6, 99€" & "</b></p>"))
 
             phGerichte.Controls.Add(btnKaufen)
             phGerichte.Controls.Add(New LiteralControl("</div>"))

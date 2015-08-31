@@ -95,15 +95,13 @@
   <ItemGroup>
     <Content Include="addDishPage.aspx" />
     <Content Include="addIngredientsPage.aspx" />
-    <Content Include="Controls\addIngredientControl.ascx" />
-    <Content Include="admin\default.aspx" />
-    <Content Include="admin\register.aspx" />
     <Content Include="App_Data\ASPNETDB.mdf" />
     <Content Include="App_Data\ASPNETDB_log.ldf" />
     <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\Database1_log.ldf" />
+    <Content Include="Controls\addIngredientControl.ascx" />
+    <Content Include="admin\default.aspx" />
+    <Content Include="admin\register.aspx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -175,6 +173,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetConnectionBestellungWare.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConnectionBestellungWare.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetConnectionGerichtZutat.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +193,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetZutaten.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DatenbankManager.vb" />
     <Compile Include="gerichte.aspx.designer.vb">
       <DependentUpon>gerichte.aspx</DependentUpon>
     </Compile>
@@ -221,6 +225,10 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Model\Bestellung.vb" />
+    <Compile Include="Model\Gericht.vb" />
+    <Compile Include="Model\Ware.vb" />
+    <Compile Include="Model\Zutat.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -319,10 +327,13 @@
     <Content Include="DataSets\DataSetGerichte.xsc">
       <DependentUpon>DataSetGerichte.xsd</DependentUpon>
     </Content>
+    <Content Include="admin\Web.config" />
+    <Content Include="DataSets\DataSetConnectionGerichtZutat.xsc">
+      <DependentUpon>DataSetConnectionGerichtZutat.xsd</DependentUpon>
+    </Content>
     <Content Include="DataSets\DataSetBestellungen.xsc">
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Content>
-    <Content Include="admin\Web.config" />
     <None Include="DataSets\DataSetBestellungen.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -331,8 +342,16 @@
     <Content Include="DataSets\DataSetBestellungen.xss">
       <DependentUpon>DataSetBestellungen.xsd</DependentUpon>
     </Content>
-    <Content Include="DataSets\DataSetConnectionGerichtZutat.xsc">
-      <DependentUpon>DataSetConnectionGerichtZutat.xsd</DependentUpon>
+    <Content Include="DataSets\DataSetConnectionBestellungWare.xsc">
+      <DependentUpon>DataSetConnectionBestellungWare.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\DataSetConnectionBestellungWare.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetConnectionBestellungWare.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="DataSets\DataSetConnectionBestellungWare.xss">
+      <DependentUpon>DataSetConnectionBestellungWare.xsd</DependentUpon>
     </Content>
     <None Include="DataSets\DataSetConnectionGerichtZutat.xsd">
       <SubType>Designer</SubType>

@@ -965,7 +965,8 @@ Namespace DataSetGerichteTableAdapters
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "INSERT INTO [dbo].[Gerichte] ([Name], [Beschreibung], [Photo], [Zeigen], [Preis])"& _ 
-                " VALUES (@Name, @Beschreibung, @Photo, @Zeigen, @Preis)"
+                " VALUES (@Name, @Beschreibung, @Photo, @Zeigen, @Preis);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCOPE_IDENTIT"& _ 
+                "Y()"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Beschreibung", Global.System.Data.SqlDbType.Text, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Beschreibung", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1194,7 +1195,7 @@ Namespace DataSetGerichteTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertDish(ByVal Name As String, ByVal Beschreibung As String, ByVal Photo As String, ByVal Zeigen As Boolean, ByVal Preis As Decimal) As Integer
+        Public Overloads Overridable Function InsertDish(ByVal Name As String, ByVal Beschreibung As String, ByVal Photo As String, ByVal Zeigen As Boolean, ByVal Preis As Decimal) As Object
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
@@ -1218,15 +1219,20 @@ Namespace DataSetGerichteTableAdapters
                         <> Global.System.Data.ConnectionState.Open) Then
                 command.Connection.Open
             End If
-            Dim returnValue As Integer
+            Dim returnValue As Object
             Try 
-                returnValue = command.ExecuteNonQuery
+                returnValue = command.ExecuteScalar
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
                     command.Connection.Close
                 End If
             End Try
-            Return returnValue
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
         End Function
     End Class
     

@@ -285,13 +285,23 @@ Partial Public Class DataSetBestellungen
         
         Private columnId As Global.System.Data.DataColumn
         
-        Private columnKundenname As Global.System.Data.DataColumn
+        Private columnVorname As Global.System.Data.DataColumn
         
-        Private columnKundenadresse As Global.System.Data.DataColumn
+        Private columnNachname As Global.System.Data.DataColumn
         
         Private columnHausnummer As Global.System.Data.DataColumn
         
-        Private columnPreis As Global.System.Data.DataColumn
+        Private columnGesamtpreis As Global.System.Data.DataColumn
+        
+        Private columnAnrede As Global.System.Data.DataColumn
+        
+        Private columnPostleitzahl As Global.System.Data.DataColumn
+        
+        Private columnStraße As Global.System.Data.DataColumn
+        
+        Private columnWohnort As Global.System.Data.DataColumn
+        
+        Private columnTelefonnummer As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -338,17 +348,17 @@ Partial Public Class DataSetBestellungen
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property KundennameColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property VornameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnKundenname
+                Return Me.columnVorname
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property KundenadresseColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NachnameColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnKundenadresse
+                Return Me.columnNachname
             End Get
         End Property
         
@@ -362,9 +372,49 @@ Partial Public Class DataSetBestellungen
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property PreisColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property GesamtpreisColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPreis
+                Return Me.columnGesamtpreis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property AnredeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAnrede
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PostleitzahlColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPostleitzahl
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property StraßeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnStraße
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property WohnortColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnWohnort
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property TelefonnummerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTelefonnummer
             End Get
         End Property
         
@@ -405,9 +455,9 @@ Partial Public Class DataSetBestellungen
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddBestellungenRow(ByVal Kundenname As String, ByVal Kundenadresse As String, ByVal Hausnummer As Short, ByVal Preis As Decimal) As BestellungenRow
+        Public Overloads Function AddBestellungenRow(ByVal Vorname As String, ByVal Nachname As String, ByVal Hausnummer As Short, ByVal Gesamtpreis As Decimal, ByVal Anrede As String, ByVal Postleitzahl As Integer, ByVal Straße As String, ByVal Wohnort As String, ByVal Telefonnummer As String) As BestellungenRow
             Dim rowBestellungenRow As BestellungenRow = CType(Me.NewRow,BestellungenRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Kundenname, Kundenadresse, Hausnummer, Preis}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Vorname, Nachname, Hausnummer, Gesamtpreis, Anrede, Postleitzahl, Straße, Wohnort, Telefonnummer}
             rowBestellungenRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowBestellungenRow)
             Return rowBestellungenRow
@@ -437,10 +487,15 @@ Partial Public Class DataSetBestellungen
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnId = MyBase.Columns("Id")
-            Me.columnKundenname = MyBase.Columns("Kundenname")
-            Me.columnKundenadresse = MyBase.Columns("Kundenadresse")
+            Me.columnVorname = MyBase.Columns("Vorname")
+            Me.columnNachname = MyBase.Columns("Nachname")
             Me.columnHausnummer = MyBase.Columns("Hausnummer")
-            Me.columnPreis = MyBase.Columns("Preis")
+            Me.columnGesamtpreis = MyBase.Columns("Gesamtpreis")
+            Me.columnAnrede = MyBase.Columns("Anrede")
+            Me.columnPostleitzahl = MyBase.Columns("Postleitzahl")
+            Me.columnStraße = MyBase.Columns("Straße")
+            Me.columnWohnort = MyBase.Columns("Wohnort")
+            Me.columnTelefonnummer = MyBase.Columns("Telefonnummer")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -448,14 +503,24 @@ Partial Public Class DataSetBestellungen
         Private Sub InitClass()
             Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId)
-            Me.columnKundenname = New Global.System.Data.DataColumn("Kundenname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnKundenname)
-            Me.columnKundenadresse = New Global.System.Data.DataColumn("Kundenadresse", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnKundenadresse)
+            Me.columnVorname = New Global.System.Data.DataColumn("Vorname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVorname)
+            Me.columnNachname = New Global.System.Data.DataColumn("Nachname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNachname)
             Me.columnHausnummer = New Global.System.Data.DataColumn("Hausnummer", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnHausnummer)
-            Me.columnPreis = New Global.System.Data.DataColumn("Preis", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPreis)
+            Me.columnGesamtpreis = New Global.System.Data.DataColumn("Gesamtpreis", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGesamtpreis)
+            Me.columnAnrede = New Global.System.Data.DataColumn("Anrede", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAnrede)
+            Me.columnPostleitzahl = New Global.System.Data.DataColumn("Postleitzahl", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPostleitzahl)
+            Me.columnStraße = New Global.System.Data.DataColumn("Straße", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnStraße)
+            Me.columnWohnort = New Global.System.Data.DataColumn("Wohnort", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnWohnort)
+            Me.columnTelefonnummer = New Global.System.Data.DataColumn("Telefonnummer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTelefonnummer)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -463,12 +528,21 @@ Partial Public Class DataSetBestellungen
             Me.columnId.AllowDBNull = false
             Me.columnId.ReadOnly = true
             Me.columnId.Unique = true
-            Me.columnKundenname.AllowDBNull = false
-            Me.columnKundenname.MaxLength = 50
-            Me.columnKundenadresse.AllowDBNull = false
-            Me.columnKundenadresse.MaxLength = 250
+            Me.columnVorname.AllowDBNull = false
+            Me.columnVorname.MaxLength = 50
+            Me.columnNachname.AllowDBNull = false
+            Me.columnNachname.MaxLength = 50
             Me.columnHausnummer.AllowDBNull = false
-            Me.columnPreis.AllowDBNull = false
+            Me.columnGesamtpreis.AllowDBNull = false
+            Me.columnAnrede.AllowDBNull = false
+            Me.columnAnrede.MaxLength = 10
+            Me.columnPostleitzahl.AllowDBNull = false
+            Me.columnStraße.AllowDBNull = false
+            Me.columnStraße.MaxLength = 2147483647
+            Me.columnWohnort.AllowDBNull = false
+            Me.columnWohnort.MaxLength = 2147483647
+            Me.columnTelefonnummer.AllowDBNull = false
+            Me.columnTelefonnummer.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -626,23 +700,23 @@ Partial Public Class DataSetBestellungen
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Kundenname() As String
+        Public Property Vorname() As String
             Get
-                Return CType(Me(Me.tableBestellungen.KundennameColumn),String)
+                Return CType(Me(Me.tableBestellungen.VornameColumn),String)
             End Get
             Set
-                Me(Me.tableBestellungen.KundennameColumn) = value
+                Me(Me.tableBestellungen.VornameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Kundenadresse() As String
+        Public Property Nachname() As String
             Get
-                Return CType(Me(Me.tableBestellungen.KundenadresseColumn),String)
+                Return CType(Me(Me.tableBestellungen.NachnameColumn),String)
             End Get
             Set
-                Me(Me.tableBestellungen.KundenadresseColumn) = value
+                Me(Me.tableBestellungen.NachnameColumn) = value
             End Set
         End Property
         
@@ -659,12 +733,67 @@ Partial Public Class DataSetBestellungen
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property Preis() As Decimal
+        Public Property Gesamtpreis() As Decimal
             Get
-                Return CType(Me(Me.tableBestellungen.PreisColumn),Decimal)
+                Return CType(Me(Me.tableBestellungen.GesamtpreisColumn),Decimal)
             End Get
             Set
-                Me(Me.tableBestellungen.PreisColumn) = value
+                Me(Me.tableBestellungen.GesamtpreisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Anrede() As String
+            Get
+                Return CType(Me(Me.tableBestellungen.AnredeColumn),String)
+            End Get
+            Set
+                Me(Me.tableBestellungen.AnredeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Postleitzahl() As Integer
+            Get
+                Return CType(Me(Me.tableBestellungen.PostleitzahlColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableBestellungen.PostleitzahlColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Straße() As String
+            Get
+                Return CType(Me(Me.tableBestellungen.StraßeColumn),String)
+            End Get
+            Set
+                Me(Me.tableBestellungen.StraßeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Wohnort() As String
+            Get
+                Return CType(Me(Me.tableBestellungen.WohnortColumn),String)
+            End Get
+            Set
+                Me(Me.tableBestellungen.WohnortColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Telefonnummer() As String
+            Get
+                Return CType(Me(Me.tableBestellungen.TelefonnummerColumn),String)
+            End Get
+            Set
+                Me(Me.tableBestellungen.TelefonnummerColumn) = value
             End Set
         End Property
     End Class
@@ -836,35 +965,53 @@ Namespace DataSetBestellungenTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "Bestellungen"
             tableMapping.ColumnMappings.Add("Id", "Id")
-            tableMapping.ColumnMappings.Add("Kundenname", "Kundenname")
-            tableMapping.ColumnMappings.Add("Kundenadresse", "Kundenadresse")
+            tableMapping.ColumnMappings.Add("Vorname", "Vorname")
+            tableMapping.ColumnMappings.Add("Nachname", "Nachname")
             tableMapping.ColumnMappings.Add("Hausnummer", "Hausnummer")
-            tableMapping.ColumnMappings.Add("Preis", "Preis")
+            tableMapping.ColumnMappings.Add("Gesamtpreis", "Gesamtpreis")
+            tableMapping.ColumnMappings.Add("Anrede", "Anrede")
+            tableMapping.ColumnMappings.Add("Postleitzahl", "Postleitzahl")
+            tableMapping.ColumnMappings.Add("Straße", "Straße")
+            tableMapping.ColumnMappings.Add("Wohnort", "Wohnort")
+            tableMapping.ColumnMappings.Add("Telefonnummer", "Telefonnummer")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Bestellungen] WHERE (([Id] = @Original_Id))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Bestellungen] WHERE (([Id] = @Original_Id))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Bestellungen] ([Kundenname], [Kundenadresse], [Hausnummer], [P"& _ 
-                "reis]) VALUES (@Kundenname, @Kundenadresse, @Hausnummer, @Preis)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Bestellungen] ([Vorname], [Nachname], [Hausnummer], [Gesamtpreis], ["& _ 
+                "Anrede], [Postleitzahl], [Straße], [Wohnort], [Telefonnummer]) VALUES (@Vorname,"& _ 
+                " @Nachname, @Hausnummer, @Gesamtpreis, @Anrede, @Postleitzahl, @Straße, @Wohnort"& _ 
+                ", @Telefonnummer)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kundenname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kundenname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kundenadresse", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kundenadresse", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Vorname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vorname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nachname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nachname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hausnummer", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hausnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Preis", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Preis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gesamtpreis", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gesamtpreis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anrede", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anrede", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Postleitzahl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Postleitzahl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Straße", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Straße", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Wohnort", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Wohnort", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Telefonnummer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefonnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Bestellungen] SET [Kundenname] = @Kundenname, [Kundenadresse] = @Ku"& _ 
-                "ndenadresse, [Hausnummer] = @Hausnummer, [Preis] = @Preis WHERE (([Id] = @Origin"& _ 
-                "al_Id))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Bestellungen] SET [Vorname] = @Vorname, [Nachname] = @Nachname, [Hausnumm"& _ 
+                "er] = @Hausnummer, [Gesamtpreis] = @Gesamtpreis, [Anrede] = @Anrede, [Postleitza"& _ 
+                "hl] = @Postleitzahl, [Straße] = @Straße, [Wohnort] = @Wohnort, [Telefonnummer] ="& _ 
+                " @Telefonnummer WHERE (([Id] = @Original_Id))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kundenname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kundenname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Kundenadresse", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kundenadresse", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Vorname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vorname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nachname", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Nachname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hausnummer", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hausnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Preis", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Preis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gesamtpreis", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Gesamtpreis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anrede", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Anrede", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Postleitzahl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Postleitzahl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Straße", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Straße", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Wohnort", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Wohnort", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Telefonnummer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefonnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -878,11 +1025,28 @@ Namespace DataSetBestellungenTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, Kundenname, Kundenadresse, Hausnummer, Preis FROM dbo.Bestellungen"
+            Me._commandCollection(0).CommandText = "SELECT        Id, Vorname, Nachname, Hausnummer, Gesamtpreis, Anrede, Postleitzah"& _ 
+                "l, Straße, Wohnort, Telefonnummer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Bestellungen"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO [Bestellungen] ([Vorname], [Nachname], [Hausnummer], [Gesamtpreis], ["& _ 
+                "Anrede], [Postleitzahl], [Straße], [Wohnort], [Telefonnummer]) VALUES (@Vorname,"& _ 
+                " @Nachname, @Hausnummer, @Gesamtpreis, @Anrede, @Postleitzahl, @Straße, @Wohnort"& _ 
+                ", @Telefonnummer);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCOPE_IDENTITY()"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Vorname", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Vorname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Nachname", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Nachname", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hausnummer", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "Hausnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Gesamtpreis", Global.System.Data.SqlDbType.Money, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "Gesamtpreis", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Anrede", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "Anrede", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Postleitzahl", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Postleitzahl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Straße", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Straße", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Wohnort", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "Wohnort", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Telefonnummer", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Telefonnummer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -940,87 +1104,61 @@ Namespace DataSetBestellungenTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertBestellung(ByVal Vorname As String, ByVal Nachname As String, ByVal Hausnummer As Short, ByVal Gesamtpreis As Decimal, ByVal Anrede As String, ByVal Postleitzahl As Integer, ByVal Straße As String, ByVal Wohnort As String, ByVal Telefonnummer As String) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (Vorname Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Vorname")
+            Else
+                command.Parameters(0).Value = CType(Vorname,String)
             End If
+            If (Nachname Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Nachname")
+            Else
+                command.Parameters(1).Value = CType(Nachname,String)
+            End If
+            command.Parameters(2).Value = CType(Hausnummer,Short)
+            command.Parameters(3).Value = CType(Gesamtpreis,Decimal)
+            If (Anrede Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Anrede")
+            Else
+                command.Parameters(4).Value = CType(Anrede,String)
+            End If
+            command.Parameters(5).Value = CType(Postleitzahl,Integer)
+            If (Straße Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Straße")
+            Else
+                command.Parameters(6).Value = CType(Straße,String)
+            End If
+            If (Wohnort Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Wohnort")
+            Else
+                command.Parameters(7).Value = CType(Wohnort,String)
+            End If
+            If (Telefonnummer Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Telefonnummer")
+            Else
+                command.Parameters(8).Value = CType(Telefonnummer,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
             Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
+                returnValue = command.ExecuteScalar
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
+                    command.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Kundenname As String, ByVal Kundenadresse As String, ByVal Hausnummer As Short, ByVal Preis As Decimal) As Integer
-            If (Kundenname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kundenname")
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Kundenname,String)
+                Return CType(returnValue,Object)
             End If
-            If (Kundenadresse Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kundenadresse")
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Kundenadresse,String)
-            End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(Hausnummer,Short)
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(Preis,Decimal)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Kundenname As String, ByVal Kundenadresse As String, ByVal Hausnummer As Short, ByVal Preis As Decimal, ByVal Original_Id As Integer) As Integer
-            If (Kundenname Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kundenname")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Kundenname,String)
-            End If
-            If (Kundenadresse Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Kundenadresse")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Kundenadresse,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Hausnummer,Short)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Preis,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Id,Integer)
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
         End Function
     End Class
     

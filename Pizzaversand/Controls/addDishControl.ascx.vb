@@ -27,7 +27,7 @@
 
     End Sub
 
-    Private Function calculatePrice(ByVal zuList As List(Of Zutat) As Double
+    Private Function calculatePrice(ByVal zuList As List(Of Zutat)) As Double
         Dim price As Double = 0
         For Each zutat As Zutat In zuList
             price = price + zutat.preis

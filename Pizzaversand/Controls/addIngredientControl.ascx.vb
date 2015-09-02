@@ -1,7 +1,7 @@
 ﻿Public Class addIngredient
     Inherits System.Web.UI.UserControl
 
-
+    Dim manager As DatenbankManager = DatenbankManager.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -9,12 +9,8 @@
 
     Protected Sub onConfirmClicked() Handles confirmButton.Click
 
-        Dim name As String = ingedientNameBox.Text
-        Dim price As Double = Val(priceBox.Text)
-
-        Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-
-        dataset.InsertZutat(name, price)
+        Dim zutat As New Zutat(ingedientNameBox.Text, Val(priceBox.Text))
+        manager.updateOrAddZutat(zutat)
 
     End Sub
 

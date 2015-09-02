@@ -3,37 +3,29 @@
 Public Class WebUserControl2
     Inherits System.Web.UI.UserControl
 
-    Dim idOfIngredient As Integer
+    Dim manager As DatenbankManager = DatenbankManager.Instance()
+    Dim idOfIngredient As Integer = -1
     Dim name As String
     Dim price As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-        Dim datatable As Data.DataTable = dataset.GetData()
 
-        If datatable.Rows.Count > 0 Then
-            ingredients.Controls.Clear()
-            For Each row As DataSetZutaten.ZutatenRow In datatable.Rows
-                Dim pricestr As String = String.Format("{0:0.00}", row.Preis)
-                Dim idstr As String = String.Format("{0:00}", row.Id)
-                ingredients.Controls.Add(New LiteralControl(idstr & " - " & row.Name & " - " & pricestr & "€" & "<br />"))
-            Next
-        End If
-
+        Dim zuList As List(Of Zutat) = manager.getZutaten()
+        ingredients.Controls.Clear()
+        For Each zutat As Zutat In zuList
+            ingredients.Controls.Add(New LiteralControl(String.Format("{0:00}", zutat.id) & " - " & zutat.name() & " - " & String.Format("{0:0.00}", zutat.preis) & "<br \>"))
+        Next
     End Sub
 
     Private Sub getButton_Click(sender As Object, e As EventArgs) Handles getButton.Click
         Dim id As Integer = Val(idBox.Text)
-        Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-        Dim datatable As Data.DataTable = DataSet.GetIngredient(id)
+        Dim zutat As Zutat = manager.getZutat(id)
 
-        If datatable.Rows.Count > 0 Then
-            For Each row As DataSetZutaten.ZutatenRow In datatable.Rows
-                idOfIngredient = Val(row.Id)
-                name = row.Name
-                price = String.Format("{0:0.00}", row.Preis)
-            Next
+        If zutat IsNot Nothing Then
             Label3.Text = "Gewählte Zutat bearbeiten"
+            idOfIngredient = Val(zutat.id)
+            name = zutat.name
+            price = String.Format("{0:0.00}", zutat.preis)
             nameBox.Text = name
             priceBox.Text = price
         Else
@@ -43,9 +35,9 @@ Public Class WebUserControl2
     End Sub
 
     Private Sub updateButton_Click(sender As Object, e As EventArgs) Handles updateButton.Click
-        Dim dataset As New DataSetZutatenTableAdapters.ZutatenTableAdapter
-        Dim price As Double = Val(priceBox.Text)
-        dataset.IngredientUpdate(nameBox.Text, price, idOfIngredient)
+        Dim zutat As New Zutat(nameBox.Text, Val(priceBox.Text))
+        zutat.id = idOfIngredient
+        manager.updateOrAddZutat(zutat)
     End Sub
 
 End Class

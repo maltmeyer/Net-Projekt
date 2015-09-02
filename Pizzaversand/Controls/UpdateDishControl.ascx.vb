@@ -1,29 +1,23 @@
 ﻿Public Class UpdateDishControl
     Inherits System.Web.UI.UserControl
 
+    Dim manager As DatenbankManager = DatenbankManager.Instance
     Dim identifier As Integer
     Dim ingredientList As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
-        Dim connectet As New DataSetConnectionGerichtZutatTableAdapters.Gericht_ZutatenTableAdapter
-        Dim datatable As Data.DataTable = dataset.GetData()
-
-        If datatable.Rows.Count > 0 Then
-            phDishes.Controls.Clear()
-            Dim ingIds As String = ""
-            For Each row As DataSetGerichte.GerichteRow In datatable.Rows
-                Dim idstr = String.Format("{0:00}", row.Id)
-                Dim ingTable As Data.DataTable = connectet.getIngredients(row.Id)
-                If ingTable.Rows.Count > 0 Then
-                    For Each zuRow As DataSetConnectionGerichtZutat.Gericht_ZutatenRow In ingTable.Rows
-                        ingIds = ingIds & ", " & String.Format("{0:00}", zuRow.IdZutat)
-                    Next
-                    phDishes.Controls.Add(New LiteralControl(idstr & " - " & row.Name & " - " & row.Beschreibung & " - " & ingIds & " - " & row.Photo & "<br/>"))
-                End If
-                phDishes.Controls.Add(New LiteralControl(idstr & " - " & row.Name & " - " & row.Beschreibung & " - " & row.Photo & "<br/>"))
+        Dim dishList As List(Of Gericht) = manager.getGerichte()
+        Dim zuList As New List(Of Zutat)
+        Dim idList As String
+        phDishes.Controls.Clear()
+        For Each dish As Gericht In dishList
+            zuList = dish.zutaten
+            idList = ""
+            For Each ing As Zutat In zuList
+                idList = idList + ", " + ing.id
             Next
-        End If
+            phDishes.Controls.Add(New LiteralControl(String.Format("{0:00}", dish.id) & " - " & dish.name & " - " & dish.beschreibung & " - " & dish.photo & " - " & dish.zeigen & " - " & String.Format("{0:0.00}", dish.preis)))
+        Next
     End Sub
 
     Private Sub selectButton_Click(sender As Object, e As EventArgs) Handles selectButton.Click

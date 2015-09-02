@@ -1,9 +1,20 @@
 ﻿Public Class gerichte
     Inherits System.Web.UI.Page
 
+    Dim manager As DatenbankManager
+    Dim gerichtListe As Hashtable
+    Private Const WARENKORB = "warenkorb"
+
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         'ladeGerichte1ProReihe()
+        manager = DatenbankManager.Instance
+        If IsNothing(Session(WARENKORB)) Then
+            Session("warenkorb") = New List(Of Ware)
+        End If
+        gerichtListe = New Hashtable
+
         ladeGerichte()
+
     End Sub
 
     ''' <summary>
@@ -34,6 +45,7 @@
             btnKaufen = New Button
             btnKaufen.Text = "In den Warenkorb"
             btnKaufen.CssClass = "btn btn-default"
+
             If rowCounter = 0 Then
                 phGerichte.Controls.Add(New LiteralControl("<div class=""row"">"))
             End If
@@ -74,68 +86,59 @@
 
 
     Private Sub ladeGerichte()
-        Dim dataset As New DataSetGerichteTableAdapters.GerichteTableAdapter
-        Dim datatable As Data.DataTable = dataset.GetData
-        Dim datasetZutaten As New DataSetZutatenTableAdapters.ZutatenTableAdapter
 
         Dim img As Image
         Dim label As LiteralControl
         Dim btnKaufen As Button
 
-        If datatable.Rows.Count > 0 Then
-            phGerichte.Controls.Clear()
-            addTag("<Table>")
-            For Each row As DataSetGerichte.GerichteRow In datatable.Rows
-                img = New Image
-                img.ImageUrl = "~/UserUploadImages/" & row.Photo
-                img.CssClass = "imgPanelGerichte"
+        phGerichte.Controls.Clear()
+        addTag("<Table>")
+        For Each gericht As Gericht In manager.getGerichte
 
-                label = New LiteralControl
-                label.Text = row.Name
+            img = New Image
+            img.ImageUrl = "~/UserUploadImages/" & gericht.photo
+            img.CssClass = "imgPanelGerichte"
 
-                btnKaufen = New Button
-                btnKaufen.Text = "In den Warenkorb"
-                btnKaufen.CssClass = "btn btn-default"
+            label = New LiteralControl
+            label.Text = gericht.name
 
-                addTag("<tr>")
-                addTag("<td>")
-                addTag("<div   class=""abstand"">")
-                phGerichte.Controls.Add(img)
-                addTag("</div>")
-                addTag("<td>")
-                addTag("<div class=""abstand2"">")
-                addTag("<h3>" & row.Name & "</h3>")
-                addTag("<p>" & row.Beschreibung & "</p>")
-                addTag("<h4>" & "Zutaten" & "</h4>")
+            btnKaufen = New Button
+            btnKaufen.Text = "In den Warenkorb"
+            btnKaufen.CssClass = "btn btn-default"
+            gerichtListe.Add(btnKaufen, gericht)
+            AddHandler btnKaufen.Click, AddressOf btnKaufen_Click
 
-
-
-
-                For Each rowZutatID As DataSetConnectionGerichtZutat.Gericht_ZutatenRow In getZutaten(row.Id).Rows
-                    Dim datatableZutat As Data.DataTable = datasetZutaten.getIngredient(rowZutatID.IdZutat)
-                    For Each rowZutat As DataSetZutaten.ZutatenRow In datatableZutat.Rows
-                        addTag("<p>" & rowZutat.Name & "</p>")
-                    Next
-                Next
+            addTag("<tr>")
+            addTag("<td>")
+            addTag("<div   class=""abstand"">")
+            phGerichte.Controls.Add(img)
+            addTag("</div>")
+            addTag("<td>")
+            addTag("<div class=""abstand2"">")
+            addTag("<h3>" & gericht.name & "</h3>")
+            addTag("<p>" & gericht.beschreibung & "</p>")
+            addTag("<h4>" & "Zutaten" & "</h4>")
 
 
-
-                addTag("<p><b>" & String.Format("{0:0.00}", row.Preis) & " € </b></p>")
-                phGerichte.Controls.Add(btnKaufen)
-                addTag("</div>")
-                addTag("</td>")
-                addTag("</tr>")
-
+            addTag("<ul>")
+            For Each zutat As Zutat In gericht.zutaten
+                addTag("<li>" & zutat.name & "</li>")
             Next
-            addTag("</table>")
-        End If
+            addTag("</ul>")
+
+
+            addTag("<p><b>" & String.Format("{0:0.00}", gericht.preis) & " € </b></p>")
+            phGerichte.Controls.Add(btnKaufen)
+            addTag("</div>")
+            addTag("</td>")
+           addTag("</tr>")
+
+
+        Next
+        addTag("</table>")
+
     End Sub
 
-    Private Function getZutaten(ByVal gerichtID As Integer) As Data.DataTable
-        Dim dataset As New DataSetConnectionGerichtZutatTableAdapters.Gericht_ZutatenTableAdapter
-        Dim datatable As Data.DataTable = dataset.getIngredients(gerichtID)
-        Return datatable
-    End Function
 
     ''' <summary>
     ''' Fügt ein neues html tag in phGerichte ein
@@ -221,6 +224,31 @@
         Next
         Return images
     End Function
+
+    Protected Sub btnKaufen_Click(sender As Object, e As EventArgs)
+        Dim btnKaufen As Button = CType(sender, Button)
+
+        Dim gericht As Gericht = gerichtListe(btnKaufen)
+
+        Dim gerichte As List(Of Ware) = Session(WARENKORB)
+        Dim gefunden As Boolean = False
+
+        'Suchen ob schon im Warenkorb
+        For Each ware As Ware In gerichte
+            If ware.gericht.id = gericht.id Then
+                gefunden = True
+                ware.anzahl += 1
+            End If
+        Next
+
+        If Not gefunden Then
+            gerichte.Add(New Ware(gericht, 1))
+        End If
+
+
+
+    End Sub
+
 
     Protected Sub btn2Spalten_Click(sender As Object, e As EventArgs) Handles btn2Spalten.Click
         phGerichte.Controls.Clear()

@@ -127,6 +127,7 @@
     <Content Include="UserUploadImages\pizza2.jpg" />
     <Content Include="UserUploadImages\pizza3.png" />
     <Content Include="User\profile.aspx" />
+    <Content Include="warenkorb.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="User\profile.aspx.vb">
       <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="warenkorb.aspx.designer.vb">
+      <DependentUpon>warenkorb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warenkorb.aspx.vb">
+      <DependentUpon>warenkorb.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

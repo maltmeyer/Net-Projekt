@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class addIngredient
     
     '''<summary>
-    '''nameThereValidator control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents nameThereValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''ingedientNameBox control.
@@ -32,22 +32,13 @@ Partial Public Class addIngredient
     Protected WithEvents ingedientNameBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''priceThereValidator control.
+    '''Label2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents priceThereValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''priceFormatValidator control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents priceFormatValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''priceBox control.
@@ -66,4 +57,31 @@ Partial Public Class addIngredient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents confirmButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''nameThereValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents nameThereValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''priceThereValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents priceThereValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''priceFormatValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents priceFormatValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
 End Class

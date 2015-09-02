@@ -15,7 +15,7 @@
 <table style="width: 100%;">
     <tr>
         <td class="auto-style1">
-            <asp:RequiredFieldValidator ID="nameThereValidator" runat="server" Text="Zutat:" ErrorMessage="Bitte einen Namen eingeben" ControlToValidate="ingredientNameBox" />
+            <asp:Label ID="Label1" runat="server" Text="Name der Zutat:"></asp:Label>
         </td>
         <td>
             <asp:TextBox ID="ingedientNameBox" runat="server" Width="230px"/>
@@ -23,9 +23,7 @@
     </tr>
     <tr>
         <td class="auto-style1">
-            <asp:RequiredFieldValidator ID="priceThereValidator" runat="server" Text="Preis: (Format: 0.00)" ErrorMessage="Bitte einen Preis eingeben" ControlToValidate="priceBox" /><br />
-            <asp:RegularExpressionValidator ID="priceFormatValidator" runat="server" ErrorMessage="Falsches Format." 
-                ControlToValidate="priceBox" ValidationExpression="[0-9]\.[0-9]{2}" />
+            <asp:Label ID="Label2" runat="server" Text="Preis: (Format: 0.00)"></asp:Label>
         </td>
         <td>
             <asp:TextBox ID="priceBox" runat="server" TextMode="Number" Width="230px" />
@@ -37,5 +35,9 @@
         </td>
     </tr>
 </table>
+<asp:RequiredFieldValidator ID="nameThereValidator" runat="server" ErrorMessage="Bitte einen Namen eingeben" ControlToValidate="ingredientNameBox" /><br />
+<asp:RequiredFieldValidator ID="priceThereValidator" runat="server" ErrorMessage="Bitte einen Preis eingeben" ControlToValidate="priceBox" /><br />
+            <asp:RegularExpressionValidator ID="priceFormatValidator" runat="server" ErrorMessage="Falsches Format." 
+                ControlToValidate="priceBox" ValidationExpression="[0-9]\.[0-9]{2}" />
 
 

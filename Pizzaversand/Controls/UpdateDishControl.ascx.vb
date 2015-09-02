@@ -14,9 +14,9 @@
             zuList = dish.zutaten
             idList = ""
             For Each ing As Zutat In zuList
-                idList = idList + ", " + ing.id
+                idList = idList & ", " & ing.id
             Next
-            phDishes.Controls.Add(New LiteralControl(String.Format("{0:00}", dish.id) & " - " & dish.name & " - " & dish.beschreibung & " - " & dish.photo & " - " & dish.zeigen & " - " & String.Format("{0:0.00}", dish.preis)))
+            phDishes.Controls.Add(New LiteralControl(String.Format("{0:00}", dish.id) & " - " & dish.name & " - " & dish.beschreibung & " - " & dish.photo & " - " & dish.zeigen & " - " & String.Format("{0:0.00}", dish.preis) & "<br />"))
         Next
     End Sub
 

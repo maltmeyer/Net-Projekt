@@ -86,13 +86,13 @@ Partial Public Class WebUserControl2
     Protected WithEvents nameBox As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''priceValidator control.
+    '''Label5 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents priceValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''priceBox control.
@@ -111,4 +111,13 @@ Partial Public Class WebUserControl2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents updateButton As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''priceValidator control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents priceValidator As Global.System.Web.UI.WebControls.RegularExpressionValidator
 End Class

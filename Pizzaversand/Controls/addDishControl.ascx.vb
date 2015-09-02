@@ -8,7 +8,7 @@
         phIngredients.Controls.Clear()
 
         For Each zutat As Zutat In ingList
-            phIngredients.Controls.Add(New LiteralControl(String.Format("{0:00}", zutat.id) & " - " & zutat.name & " - " & String.Format("{0:0.00}", zutat.preis) & "<br\>"))
+            phIngredients.Controls.Add(New LiteralControl(String.Format("{0:00}", zutat.id) & " - " & zutat.name & " - " & String.Format("{0:0.00}", zutat.preis) & "<br />"))
         Next
 
     End Sub

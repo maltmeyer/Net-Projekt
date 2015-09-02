@@ -36,8 +36,7 @@
     </tr>
     <tr>
         <td>
-            <asp:RegularExpressionValidator ID="priceValidator" runat="server" Text="Preis (Format: 0.00)" ErrorMessage="Preis entspricht nicht dem vorgegebenen Format (2 Dezimalstellen, Trennzeichen ist Punkt)"
-                ValidationExpression="[0-9]\.[0-9]{2}" ControlToValidate="priceBox" />
+            <asp:Label ID="Label5" runat="server" Text="Preis (Format 0.00):"></asp:Label>
         </td>
         <td>
             <asp:TextBox ID="priceBox" runat="server"></asp:TextBox>
@@ -49,3 +48,5 @@
         </td>
     </tr>
 </table>
+<asp:RegularExpressionValidator ID="priceValidator" runat="server" ErrorMessage="Preis entspricht nicht dem vorgegebenen Format (2 Dezimalstellen, Trennzeichen ist Punkt)"
+                ValidationExpression="[0-9]\.[0-9]{2}" ControlToValidate="priceBox" />

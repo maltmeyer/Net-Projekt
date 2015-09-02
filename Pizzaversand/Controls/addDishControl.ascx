@@ -14,7 +14,7 @@
 <table style="width: 100%;">
     <tr>
         <td class="auto-style1">
-            <asp:RequiredFieldValidator ID="nameValidator" runat="server" ErrorMessage="Bitte Namen angeben" Text="Name des Gerichts:" ControlToValidate="dishText" />
+            <asp:Label ID="Label1" runat="server" Text="Name des Gerichts"></asp:Label>
         </td>
         <td>
             <asp:TextBox ID="dishText" runat="server" Width="428px"></asp:TextBox>
@@ -30,9 +30,7 @@
     </tr>
     <tr>
         <td class="auto-style1">
-            <asp:RequiredFieldValidator ID="ingredientsValidator" runat="server" Text="Zutaten:" ErrorMessage="Keine Zutatenliste angegeben" ControlToValidate="ingBox" ValidationGroup="ingLstVals" /><br />
-            <asp:RegularExpressionValidator ID="ingredientsContentsValidator" runat="server" ErrorMessage="Zutatenliste muss aus Zahlen und Kommas bestehen"
-                ControlToValidate="ingBox" ValidationExpression="([0-9]*, )*" ValidationGroup="ingLstVals" />
+            <asp:Label ID="Label3" runat="server" Text="Zutaten:"></asp:Label>
         </td>
         <td>
             <asp:TextBox ID="ingBox" runat="server" Width="428px"></asp:TextBox>
@@ -57,3 +55,7 @@
         </td>
     </tr>
 </table>
+<asp:RequiredFieldValidator ID="nameValidator" runat="server" ErrorMessage="Bitte Namen angeben" ControlToValidate="dishText" /><br />
+ <asp:RequiredFieldValidator ID="ingredientsValidator" runat="server" ErrorMessage="Keine Zutatenliste angegeben" ControlToValidate="ingBox" ValidationGroup="ingLstVals" /><br />
+            <asp:RegularExpressionValidator ID="ingredientsContentsValidator" runat="server" ErrorMessage="Zutatenliste muss aus Zahlen und Kommas bestehen"
+                ControlToValidate="ingBox" ValidationExpression="([0-9]+, )*|[0-9]+" ValidationGroup="ingLstVals" />

@@ -37,7 +37,11 @@ Public NotInheritable Class DatenbankManager
         End If
         Return gerichte
     End Function
-
+    ''' <summary>
+    ''' Gibt ein bestimmtes Gericht in der Datenbank zurück
+    ''' </summary>
+    ''' <param name="id">Id des Gerichtes</param>
+    ''' <returns>Gericht, wenn vorhanden, sonst Nothing</returns>
     Public Function getGericht(ByVal id As Integer) As Gericht
         Dim datatable As Data.DataTable = dsGerichte.GetEntry(id)
         Dim gericht As Gericht = Nothing

@@ -38,6 +38,19 @@ Public NotInheritable Class DatenbankManager
         Return gerichte
     End Function
 
+    Public Function getGericht(ByVal id As Integer) As Gericht
+        Dim datatable As Data.DataTable = dsGerichte.GetEntry(id)
+        Dim gericht As Gericht = Nothing
+        If datatable.Rows.Count > 0 Then
+            For Each row As DataSetGerichte.GerichteRow In datatable.Rows
+                gericht = New Gericht(row.Name, row.Beschreibung, row.Photo, row.Zeigen, row.Preis)
+                gericht.id = row.Id
+                gericht.zutaten = getZutaten(row.Id)
+            Next
+        End If
+        Return gericht
+    End Function
+
     ''' <summary>
     ''' Gibt alle Zutaten die zu einem Gericht gehören zurück.
     ''' </summary>

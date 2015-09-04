@@ -194,7 +194,8 @@ Public NotInheritable Class DatenbankManager
     ''' </summary>
     ''' <param name="bestellung"></param>
     Public Sub neueBestellung(ByVal bestellung As Bestellung)
-        Dim id As Integer = dsBestellungen.InsertBestellung(bestellung.vorname, bestellung.nachname, bestellung.hausnummer, bestellung.gesamtpreis, bestellung.anrede, bestellung.plz, bestellung.straße, bestellung.wohnort, bestellung.telefon)
+        Dim datum As Date = Date.Now
+        Dim id As Integer = dsBestellungen.InsertBestellung(bestellung.vorname, bestellung.nachname, bestellung.hausnummer, bestellung.gesamtpreis, bestellung.anrede, bestellung.plz, bestellung.straße, bestellung.wohnort, bestellung.telefon, datum)
         bestellung.id = id
         For Each ware As Ware In bestellung.waren
             setConnectionBestellungGericht(bestellung, ware)
@@ -224,6 +225,7 @@ Public NotInheritable Class DatenbankManager
         For Each row As DataSetBestellungen.BestellungenRow In datatable.Rows
             bestellung = New Bestellung(row.Vorname, row.Nachname, row.Hausnummer, row.Gesamtpreis, row.Anrede, row.Postleitzahl, row.Straße, row.Wohnort, row.Telefonnummer)
             bestellung.id = row.Id
+            bestellung.datum = row.datum
             bestellung.waren = getWaren(bestellung.id)
             bestellungen.Add(bestellung)
         Next
@@ -256,6 +258,14 @@ Public NotInheritable Class DatenbankManager
     ''' </summary>
     ''' <param name="bestellung"></param>
     Public Sub bestellungBearbeitet(ByVal bestellung As Bestellung)
+        dsBestellungen.UpdateBestellungBearbeitet(bestellung.id)
+    End Sub
+
+    ''' <summary>
+    ''' Schließt eine Bestellung ab.
+    ''' </summary>
+    ''' <param name="bestellung"></param>
+    Public Sub bestellungAbschließen(ByVal bestellung As Bestellung)
         dsBestellungen.UpdateBestellungBearbeitet(bestellung.id)
     End Sub
 

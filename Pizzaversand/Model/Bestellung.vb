@@ -112,6 +112,17 @@ Public Class Bestellung
             _ware = value
         End Set
     End Property
+
+    Private _datum As Date
+    Public Property datum() As Date
+        Get
+            Return _datum
+        End Get
+        Set(ByVal value As Date)
+            _datum = value
+        End Set
+    End Property
+
     Public Sub New(ByVal vorname As String, ByVal nachname As String, ByVal hausnr As Integer, ByVal gesamtpreis As Double, ByVal anrede As String, ByVal plz As Integer, ByVal straße As String, ByVal wohnort As String, ByVal telefon As String)
         Me.vorname = vorname
         Me.nachname = nachname

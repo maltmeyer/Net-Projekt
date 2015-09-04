@@ -87,7 +87,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Gerichte Verwalten</a></li>
                                         <li><a href="#">Angebote verwalten</a></li>
-                                         <li><a href="#">Bestellungen</a></li>
+                                         <li><a href="/employee/Bestellungen.aspx">Bestellungen</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li> <asp:LoginStatus ID="LoginStatus5" runat="server" LogoutPageUrl="~/home.aspx" LogoutAction="Redirect" /></li>
                                     </ul>
@@ -112,7 +112,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Gerichte Verwalten</a></li>
                                         <li><a href="#">Angebote verwalten</a></li>
-                                         <li><a href="#">Bestellungen</a></li>
+                                         <li><a href="/employee/Bestellungen.aspx">Bestellungen</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="/admin/register.aspx">Neuen Account anlegen</a></li>
                                         <li role="separator" class="divider"></li>

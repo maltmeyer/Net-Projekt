@@ -55,6 +55,9 @@
     End Sub
 
     Private Sub btnKaufAbschließen_Click(sender As Object, e As EventArgs) Handles btnKaufAbschließen.Click
+        If Not Page.IsValid Then
+            Exit Sub
+        End If
         Dim manager As DatenbankManager = DatenbankManager.Instance
         Dim anrede As String
         If rbH.Checked Then

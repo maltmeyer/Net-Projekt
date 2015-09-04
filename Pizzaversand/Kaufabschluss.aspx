@@ -4,10 +4,11 @@
     <asp:PlaceHolder ID="phAbschluss" runat="server">
 
     <h1>Kontaktdaten</h1>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <asp:PlaceHolder ID="phGerichte" runat="server">
      <table>
         <tr>
-            <td align="center" style="height: 20px">Deine Information</td>
+            <td  style="height: 20px">Deine Information</td>
         </tr>
         <asp:RadioButton ID="rbH" runat="server" GroupName="Anrede" Text="Herr" />
         <asp:RadioButton ID="rbF" runat="server" GroupName="Anrede" Text="Frau" />
@@ -53,8 +54,21 @@
     <br />
 
     <asp:Button ID="btnKaufAbschließen" runat="server" Text="Kauf abschließen" />
+        <!-- Required -->
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorVorname" runat="server" ErrorMessage="Vorname angeben" ControlToValidate="txtVorname"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNachname" runat="server" ErrorMessage="Nachname angeben" ControlToValidate="txtNachname"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorStraße" runat="server" ErrorMessage="Straße angeben" ControlToValidate="txtStraße"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorHausnummer" runat="server" ErrorMessage="Hausnummer angeben" ControlToValidate="txtHausnummer"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPLZ" runat="server" ErrorMessage="Postleitzahl angeben" ControlToValidate="txtPLZ"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorOrt" runat="server" ErrorMessage="Wohnort angeben" ControlToValidate="txtOrt"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorTelefon" runat="server" ErrorMessage="Telefonnummer angeben" ControlToValidate="txtTelefon"></asp:RequiredFieldValidator>
 
-   
+        <asp:RegularExpressionValidator ID="RegularExpressionValidatorVorname" runat="server" ErrorMessage="Ungültiger Vorname" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ControlToValidate ="txtVorname"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidatorNachname" runat="server" ErrorMessage="Ungültiger Nachname" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ControlToValidate ="txtNachname"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidatorStraße" runat="server" ErrorMessage="Ungültige Straße" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ControlToValidate ="txtStraße"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidatorOrt" runat="server" ErrorMessage="Ungültiger Ort" ValidationExpression="^[a-zA-Z''-'\s]{1,40}$" ControlToValidate ="txtOrt"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidatorTelefon" runat="server" ErrorMessage="Ungültige Telefonnummer" ValidationExpression="^\d+$" ControlToValidate ="txtTelefon"></asp:RegularExpressionValidator>
+          <asp:RegularExpressionValidator ID="RegularExpressionValidatorPLZ" runat="server" ErrorMessage="Ungültige PLZ" ValidationExpression="^\d+$" ControlToValidate ="txtPLZ"></asp:RegularExpressionValidator>
     </asp:PlaceHolder>
 
     <asp:PlaceHolder ID="phErfolg" runat="server">

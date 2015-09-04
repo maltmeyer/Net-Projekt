@@ -22,10 +22,10 @@
         txtPLZ.Text = getValue("plz")
         txtOrt.Text = getValue("ort")
         txtTelefon.Text = getValue("telefon")
-        If getValue("anrede") Then
-            rbH.Checked = True
-        Else
+        If getValue("anrede") = "Frau" Then
             rbF.Checked = True
+        Else
+            rbH.Checked = True
         End If
     End Sub
 

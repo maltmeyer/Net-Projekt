@@ -52,13 +52,13 @@
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
                                 <li><a href="#">Eigene Pizza</a></li>
-                                 <li><a href="#">Warenkorb</a></li>
+                                 <li><a href="warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
                                
                                 <li> <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/home.aspx" LogoutAction="Redirect" /></li>
-                                <li><a href="/register.aspx">Registieren</a></li>
+                                <li><a href="/register.aspx">Registrieren</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -75,13 +75,13 @@
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
                                 <li><a href="#">Eigene Pizza</a></li>
-                                 <li><a href="#">Warenkorb</a></li>
+                                 <li><a href="warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
                                
                                 <li> <asp:LoginStatus ID="LoginStatus4" runat="server" LogoutPageUrl="~/home.aspx" LogoutAction="Redirect" /></li>
-                                <li><a href="/register.aspx">Registieren</a></li>
+                                <li><a href="/register.aspx">Registrieren</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Verwaltung <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -100,13 +100,13 @@
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
                                 <li><a href="#">Eigene Pizza</a></li>
-                                 <li><a href="#">Warenkorb</a></li>
+                                <li><a href="warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 
                             <ul class="nav navbar-nav navbar-right">
                                
                                 <li> <asp:LoginStatus ID="LoginStatus6" runat="server" LogoutPageUrl="~/home.aspx" LogoutAction="Redirect" /></li>
-                                <li><a href="/register.aspx">Registieren</a></li>
+                                <li><a href="/register.aspx">Registrieren</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Verwaltung <span class="caret"></span></a>
                                     <ul class="dropdown-menu">

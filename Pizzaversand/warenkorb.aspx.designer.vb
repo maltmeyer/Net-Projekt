@@ -21,4 +21,22 @@ Partial Public Class warenkorb
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents phGerichte As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''btnAktualisieren control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAktualisieren As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnWeiter control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnWeiter As Global.System.Web.UI.WebControls.Button
 End Class

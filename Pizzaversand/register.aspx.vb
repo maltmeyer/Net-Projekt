@@ -26,7 +26,13 @@
 
     Private Sub CreateUserWizard1_FinishButtonClick(sender As Object, e As WizardNavigationEventArgs) Handles CreateUserWizard1.FinishButtonClick
         'Profile.vorname funktioniert in einem Projekt nicht, nur Webseite
-        setValue("anrede", rbH.Checked)
+        Dim anrede As String
+        If rbH.Checked Then
+            anrede = "Herr"
+        Else
+            anrede = "Frau"
+        End If
+        setValue("anrede", anrede)
         setValue("vorname", txtVorname.Text)
         setValue("nachname", txtNachname.Text)
         setValue("strasse", txtStraße.Text)

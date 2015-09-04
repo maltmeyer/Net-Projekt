@@ -5,5 +5,6 @@
     <asp:PlaceHolder ID="phGerichte" runat="server">
 
     </asp:PlaceHolder>
-
+    <asp:Button ID="btnAktualisieren" runat="server" Text="Aktualisieren" />
+    <asp:Button ID="btnWeiter" runat="server" Text="Weiter" />
 </asp:Content>

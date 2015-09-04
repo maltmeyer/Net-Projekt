@@ -112,7 +112,7 @@ Public Class Bestellung
             _ware = value
         End Set
     End Property
-    Public Sub New(ByVal vorname As String, ByVal nachname As String, ByVal hausnr As Integer, ByVal gesamtpreis As Double, ByVal anrede As String, ByVal plz As Integer, ByVal straße As String, ByVal wohnort As String, ByVal telefon As Integer)
+    Public Sub New(ByVal vorname As String, ByVal nachname As String, ByVal hausnr As Integer, ByVal gesamtpreis As Double, ByVal anrede As String, ByVal plz As Integer, ByVal straße As String, ByVal wohnort As String, ByVal telefon As String)
         Me.vorname = vorname
         Me.nachname = nachname
         Me.hausnummer = hausnr

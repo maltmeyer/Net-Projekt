@@ -110,6 +110,7 @@
     <Content Include="gerichte.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="Kaufabschluss.aspx" />
     <Content Include="login.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="home.aspx.vb">
       <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Kaufabschluss.aspx.designer.vb">
+      <DependentUpon>Kaufabschluss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kaufabschluss.aspx.vb">
+      <DependentUpon>Kaufabschluss.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">

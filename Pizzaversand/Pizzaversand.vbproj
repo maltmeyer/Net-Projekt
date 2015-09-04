@@ -107,6 +107,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="employee\Bestellungen.aspx" />
     <Content Include="gerichte.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
@@ -196,6 +197,13 @@
       <DependentUpon>DataSetZutaten.xsd</DependentUpon>
     </Compile>
     <Compile Include="DatenbankManager.vb" />
+    <Compile Include="employee\Bestellungen.aspx.designer.vb">
+      <DependentUpon>Bestellungen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employee\Bestellungen.aspx.vb">
+      <DependentUpon>Bestellungen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="gerichte.aspx.designer.vb">
       <DependentUpon>gerichte.aspx</DependentUpon>
     </Compile>
@@ -393,6 +401,7 @@
     <Content Include="DataSets\DataSetZutaten.xss">
       <DependentUpon>DataSetZutaten.xsd</DependentUpon>
     </Content>
+    <Content Include="employee\Web.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

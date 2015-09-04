@@ -211,4 +211,52 @@ Public NotInheritable Class DatenbankManager
         dsBestellungGericht.setConnection(bestellung.id, ware.gericht.id, ware.anzahl)
     End Sub
 
+    ''' <summary>
+    ''' Gibt alle Bestellungen zurück die noch icht bearbeitet wurden
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function getAusstehendeBestellungen() As List(Of Bestellung)
+        Dim bestellungen As New List(Of Bestellung)
+
+        Dim datatable As Data.DataTable = dsBestellungen.getAustehendeBestellungen()
+        Dim bestellung As Bestellung = Nothing
+
+        For Each row As DataSetBestellungen.BestellungenRow In datatable.Rows
+            bestellung = New Bestellung(row.Vorname, row.Nachname, row.Hausnummer, row.Gesamtpreis, row.Anrede, row.Postleitzahl, row.Straße, row.Wohnort, row.Telefonnummer)
+            bestellung.id = row.Id
+            bestellung.waren = getWaren(bestellung.id)
+            bestellungen.Add(bestellung)
+        Next
+
+        Return bestellungen
+    End Function
+
+    ''' <summary>
+    ''' Gibt alle Waren mit Gericht und anzahl für eine Bestellung zurück
+    ''' </summary>
+    ''' <param name="idBestellung"></param>
+    ''' <returns></returns>
+    Private Function getWaren(ByVal idBestellung As Integer) As List(Of Ware)
+        Dim waren As New List(Of Ware)
+
+        Dim datatable As Data.DataTable = dsBestellungGericht.getWaren(idBestellung)
+
+        Dim ware As Ware
+        Dim gericht As Gericht
+        For Each row As DataSetConnectionBestellungWare.Bestellung_GerichtRow In datatable.Rows
+            gericht = getGericht(row.IdWare)
+            ware = New Ware(gericht, row.AnzahlVonWare)
+            waren.Add(ware)
+        Next
+        Return waren
+    End Function
+
+    ''' <summary>
+    ''' Markiert eine Bestellung als bearbeitet
+    ''' </summary>
+    ''' <param name="bestellung"></param>
+    Public Sub bestellungBearbeitet(ByVal bestellung As Bestellung)
+        dsBestellungen.UpdateBestellungBearbeitet(bestellung.id)
+    End Sub
+
 End Class

@@ -17,6 +17,13 @@ Public Class Global_asax
         End If
 
 
+
+        'addAdmin()
+    End Sub
+
+    Private Sub addAdmin()
+        Dim user As MembershipUser = Membership.CreateUser("admin", "admin_123")
+        Roles.AddUserToRole("admin", "admin")
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)

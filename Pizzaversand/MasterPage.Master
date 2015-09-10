@@ -116,12 +116,10 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </div>
 
                             <% end If %>
                             
                         <!-- /.navbar-collapse -->
-                    </div>
                     <!-- /.container-fluid -->
                 </nav>
             </div>

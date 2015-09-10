@@ -1,7 +1,7 @@
 ﻿Public Class home
     Inherits System.Web.UI.Page
 
-
+    Dim manager As DatenbankManager = DatenbankManager.Instance
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         saveImage()
@@ -55,50 +55,33 @@
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub showNextImage()
-        Dim imgFolderPath As String = Server.MapPath("~/UserUploadImages/")
-        Dim images As List(Of String)
-        images = getImageNames(imgFolderPath)
-        Dim index As Integer = ViewState("imgCounter")
-        If index >= images.Count Then
-            index = 0
+        ' Dim imgFolderPath As String = Server.MapPath("~/UserUploadImages/")
+        Dim imgFolderPath As String = "~/UserUploadImages/"
+
+        Dim gerichte As List(Of Gericht) = manager.getGerichte
+        If gerichte.Count > 0 Then
+            Dim index As Integer = ViewState("imgCounter")
+            If index >= gerichte.Count Then
+                index = 0
+            End If
+
+            Dim gericht As Gericht = gerichte(index)
+            lblVorschau.Text = gericht.name
+            imgVorschau.ImageUrl = imgFolderPath & gericht.photo
+            index += 1
+            ViewState("imgCounter") = index
+
         End If
-        imgAngebot.ImageUrl = images(index)
-        index += 1
-        ViewState("imgCounter") = index
+
+
     End Sub
 
-    ''' <summary>
-    ''' Gibt alle Dateinamen eines Ordners in passendem Format zurück
-    ''' </summary>
-    ''' <param name="imgFolderPath"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Private Function getImageNames(ByVal imgFolderPath As String) As List(Of String)
-        Dim tmpName As String
-        Dim images As New List(Of String)
-        For Each s As String In My.Computer.FileSystem.GetFiles(imgFolderPath)
-            Dim ind As Integer = s.LastIndexOf("\")
-            tmpName = s.Substring(ind, s.Length - ind)
-            tmpName = "~/UserUploadImages" & tmpName
-            images.Add(tmpName)
-        Next
-        Return images
-    End Function
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             ViewState("imgCounter") = 0
             showNextImage()
 
         End If
-
-        'Dim user As MembershipUser = Membership.GetUser(True)
-        'If Not IsNothing(user) Then
-        '    Dim lbl As Label
-        '    lbl = CType(Master.FindControl("lblUsername"), Label)
-        '    lbl.Text = user.UserName
-
-        'End If
-
 
     End Sub
 

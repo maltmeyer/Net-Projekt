@@ -128,16 +128,6 @@
             <asp:ContentPlaceHolder ID="phBody" runat="server">
             </asp:ContentPlaceHolder>
 
-            <div class="center">
-               
-                <p>Ende
-                <asp:LoginName ID="LoginName1" runat="server" />
-                </p>
-                
-                                          
-
-            </div>
-
         </div>
 
     </form>

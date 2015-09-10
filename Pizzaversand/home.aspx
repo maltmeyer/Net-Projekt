@@ -1,11 +1,13 @@
 ﻿<%@ Page MasterPageFile="~/MasterPage.master" Language="vb" AutoEventWireup="false" CodeBehind="home.aspx.vb" Inherits="Pizzaversand.home" %>
 
 <asp:Content ID="content" ContentPlaceHolderID="phBody" Runat="Server">
-    <div style="background-color:orange;text-align: center ;">
-        <h1>Willkommen auf meiner Seite</h1>
+    <div class="jumbotron text-center ">
+        <h2>Willkommen bei MegaPizza</h2>
     </div> 
+    <div class="text-center ">
+        <h2>Unsere Pizza für Sie</h2>
+    </div>
    
-    <h2>Hier unsere Aktuellen Angebote</h2>
     <asp:ScriptManager ID="ScriptManager1" runat="server" ClientIDMode="Static"></asp:ScriptManager>
      
      
@@ -17,8 +19,16 @@
         <ContentTemplate> 
            
             <asp:Timer ID="tImages" runat="server" Interval="5000" Enabled="true"></asp:Timer>
-            <asp:Image CssClass="imgPanel2" ID="imgAngebot" runat="server" />
-      
+           
+            <div class="imgPanel imgPanelGerichte ">
+                <asp:Image ID="imgVorschau" runat="server" CssClass="imgPanelGerichte"/>
+                <br />
+                <asp:Label ID="lblVorschau" runat="server" Text="" Font-Size="Large"></asp:Label>
+                
+            </div>
+</div>
+               
+            
      </ContentTemplate>
     </asp:UpdatePanel>
     </div>

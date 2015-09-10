@@ -39,7 +39,6 @@
                                 <!-- Menü nicht angemeldet -->
                             <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
-                                <li><a href="#">Eigene Pizza</a></li>
                                  <li><a href="/warenkorb.aspx">Warenkorb</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
@@ -51,7 +50,6 @@
                                 <!-- Menü User angemeldet -->
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
-                                <li><a href="#">Eigene Pizza</a></li>
                                  <li><a href="/warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 
@@ -74,7 +72,6 @@
                            <!-- Menü Employee angemeldet -->
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
-                                <li><a href="#">Eigene Pizza</a></li>
                                  <li><a href="/warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 
@@ -99,7 +96,6 @@
                            <!-- Menü Admin angemeldet -->
                                 <ul class="nav navbar-nav">
                                 <li><a href="/gerichte.aspx">Gerichte <span class="sr-only">a(aktuell)</span></a></li>
-                                <li><a href="#">Eigene Pizza</a></li>
                                 <li><a href="/warenkorb.aspx">Warenkorb</a></li>
                             </ul>
 

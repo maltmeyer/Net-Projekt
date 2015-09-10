@@ -23,15 +23,6 @@ Partial Public Class Kaufabschluss
     Protected WithEvents phAbschluss As Global.System.Web.UI.WebControls.PlaceHolder
     
     '''<summary>
-    '''ValidationSummary1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
-    
-    '''<summary>
     '''phGerichte control.
     '''</summary>
     '''<remarks>
@@ -68,6 +59,24 @@ Partial Public Class Kaufabschluss
     Protected WithEvents txtVorname As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''RequiredFieldValidatorVorname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorVorname As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorVorname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorVorname As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''txtNachname control.
     '''</summary>
     '''<remarks>
@@ -75,6 +84,24 @@ Partial Public Class Kaufabschluss
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtNachname As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RequiredFieldValidatorNachname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorNachname As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorNachname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorNachname As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''txtStraße control.
@@ -86,6 +113,24 @@ Partial Public Class Kaufabschluss
     Protected WithEvents txtStraße As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''RequiredFieldValidatorStraße control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorStraße As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorStraße control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorStraße As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''txtHausnummer control.
     '''</summary>
     '''<remarks>
@@ -93,6 +138,15 @@ Partial Public Class Kaufabschluss
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtHausnummer As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RequiredFieldValidatorHausnummer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorHausnummer As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''txtPLZ control.
@@ -104,6 +158,24 @@ Partial Public Class Kaufabschluss
     Protected WithEvents txtPLZ As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''RequiredFieldValidatorPLZ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorPLZ As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorPLZ control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorPLZ As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''txtOrt control.
     '''</summary>
     '''<remarks>
@@ -113,6 +185,24 @@ Partial Public Class Kaufabschluss
     Protected WithEvents txtOrt As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''RequiredFieldValidatorOrt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorOrt As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorOrt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorOrt As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
     '''txtTelefon control.
     '''</summary>
     '''<remarks>
@@ -120,6 +210,24 @@ Partial Public Class Kaufabschluss
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTelefon As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RequiredFieldValidatorTelefon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidatorTelefon As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''RegularExpressionValidatorTelefon control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RegularExpressionValidatorTelefon As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''lblWaren control.
@@ -138,123 +246,6 @@ Partial Public Class Kaufabschluss
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnKaufAbschließen As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''RequiredFieldValidatorVorname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorVorname As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorNachname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorNachname As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorStraße control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorStraße As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorHausnummer control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorHausnummer As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorPLZ control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorPLZ As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorOrt control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorOrt As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RequiredFieldValidatorTelefon control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidatorTelefon As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorVorname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorVorname As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorNachname control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorNachname As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorStraße control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorStraße As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorOrt control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorOrt As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorTelefon control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorTelefon As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
-    '''RegularExpressionValidatorPLZ control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RegularExpressionValidatorPLZ As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''phErfolg control.

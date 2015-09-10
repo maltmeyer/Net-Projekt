@@ -57,11 +57,8 @@
             addTag(ware.gericht.name)
             phGerichte.Controls.Add(textbox)
 
-            'hsTextbox.Add(textbox, ware)
 
-            'If textbox.Text = "" Then
             textbox.Text = ware.anzahl
-            'End If
             listTextbox.Add(textbox)
             addTag("<br/>")
             addTag(ware.gericht.preis * ware.anzahl & " €")
@@ -84,7 +81,7 @@
         Next
         addTag("</table>")
 
-        addTag("<h3>Gesamtpreis: " & gesamtpreis & "</h3>")
+        addTag("<h3>Gesamtpreis: " & gesamtpreis & " €" & "</h3>")
 
 
     End Sub

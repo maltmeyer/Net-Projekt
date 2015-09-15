@@ -4,14 +4,17 @@
 
     <h1>
         <asp:Label ID="lblHeader" runat="server" Text="Label"></asp:Label></h1>
-      <asp:Label ID="lblGespeichert" runat="server" Text=""></asp:Label></h1>
+        <asp:Label ID="lblGespeichert" runat="server" Text=""></asp:Label>
     
     <table>
         <tr>
             <td align="center" style="height: 20px">Deine Information</td>
         </tr>
-        <asp:RadioButton ID="rbH" runat="server" GroupName="Anrede" Text="Herr" />
-        <asp:RadioButton ID="rbF" runat="server" GroupName="Anrede" Text="Frau" />
+        <tr>
+            <td> <asp:RadioButton ID="rbH" runat="server" GroupName="Anrede" Text="Herr" /> </td> 
+            <td> <asp:RadioButton ID="rbF" runat="server" GroupName="Anrede" Text="Frau" /> </td> 
+        </tr>
+
         <tr>
             <td>Vorname:</td>
             <td>

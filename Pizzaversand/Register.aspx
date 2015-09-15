@@ -70,7 +70,7 @@
                             <td align="center" style="height: 20px">Additional information</td>
                         </tr>
                          <asp:RadioButton ID="rbH" runat="server" GroupName="Anrede" Text="Herr" />
-                        <asp:RadioButton ID="rbF" runat="server" GroupName="Anrede" Text="Frau" />
+                         <asp:RadioButton ID="rbF" runat="server" GroupName="Anrede" Text="Frau" />
                         <tr>
                             <td>Vorname:</td>
                             <td><asp:TextBox ID="txtVorname" runat="server"></asp:TextBox></td>

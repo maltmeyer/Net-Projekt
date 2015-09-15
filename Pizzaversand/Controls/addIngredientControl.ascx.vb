@@ -9,7 +9,7 @@
 
     Protected Sub onConfirmClicked() Handles confirmButton.Click
 
-        Dim zutat As New Zutat(ingedientNameBox.Text, Val(priceBox.Text))
+        Dim zutat As New Zutat(ingredientNameBox.Text, Val(priceBox.Text))
         manager.updateOrAddZutat(zutat)
 
     End Sub

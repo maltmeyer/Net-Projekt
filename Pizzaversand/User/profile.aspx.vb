@@ -36,7 +36,14 @@
         HttpContext.Current.Profile.SetPropertyValue(propertyName, value)
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        setValue("anrede", rbH.Checked)
+        Dim anrede As String = ""
+
+        If rbH.Checked Then
+            anrede = "Herr"
+        Else
+            anrede = "Frau"
+        End If
+        setValue("anrede", anrede)
         setValue("vorname", txtVorname.Text)
         setValue("nachname", txtNachname.Text)
         setValue("strasse", txtStraße.Text)

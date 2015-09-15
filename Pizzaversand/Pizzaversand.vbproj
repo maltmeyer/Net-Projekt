@@ -123,7 +123,7 @@
     <Content Include="TestDatenbankZutaten.aspx" />
     <Content Include="Controls\UpdateDishControl.ascx" />
     <Content Include="Controls\UpdateIngredientControl.ascx" />
-    <Content Include="updateDishPage.aspx" />
+    <Content Include="employee\updateDishPage.aspx" />
     <Content Include="updateIngredientPage.aspx" />
     <Content Include="UserUploadImages\Pizza1.jpg" />
     <Content Include="UserUploadImages\pizza2.jpg" />
@@ -189,6 +189,9 @@
     <Compile Include="DataSets\DataSetGerichte.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGerichte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetGerichte.vb">
       <DependentUpon>DataSetGerichte.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DataSetZutaten.Designer.vb">
@@ -300,10 +303,10 @@
       <DependentUpon>UpdateIngredientControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="updateDishPage.aspx.designer.vb">
+    <Compile Include="employee\updateDishPage.aspx.designer.vb">
       <DependentUpon>updateDishPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="updateDishPage.aspx.vb">
+    <Compile Include="employee\updateDishPage.aspx.vb">
       <DependentUpon>updateDishPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>

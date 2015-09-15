@@ -114,11 +114,11 @@ Public Class Bestellung
     End Property
 
     Private _datum As Date
-    Public Property datum() As Date
+    Public Property datum() As DateTime
         Get
             Return _datum
         End Get
-        Set(ByVal value As Date)
+        Set(ByVal value As DateTime)
             _datum = value
         End Set
     End Property

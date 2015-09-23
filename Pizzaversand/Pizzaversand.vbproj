@@ -93,7 +93,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addDishPage.aspx" />
+    <Content Include="employee\addDishPage.aspx" />
     <Content Include="addIngredientsPage.aspx" />
     <Content Include="App_Data\ASPNETDB.mdf" />
     <Content Include="App_Data\ASPNETDB_log.ldf" />
@@ -136,10 +136,10 @@
     <Content Include="Controls\addDishControl.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addDishPage.aspx.designer.vb">
+    <Compile Include="employee\addDishPage.aspx.designer.vb">
       <DependentUpon>addDishPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="addDishPage.aspx.vb">
+    <Compile Include="employee\addDishPage.aspx.vb">
       <DependentUpon>addDishPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>

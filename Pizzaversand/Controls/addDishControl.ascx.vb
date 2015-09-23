@@ -4,26 +4,66 @@
     Dim manager As DatenbankManager = DatenbankManager.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim ingList As List(Of Zutat) = manager.getZutaten()
-        phIngredients.Controls.Clear()
+        'Dim ingList As List(Of Zutat) = manager.getZutaten()
+        'phIngredients.Controls.Clear()
 
-        For Each zutat As Zutat In ingList
-            phIngredients.Controls.Add(New LiteralControl(String.Format("{0:00}", zutat.id) & " - " & zutat.name & " - " & String.Format("{0:0.00}", zutat.preis) & "<br />"))
-        Next
+        'For Each zutat As Zutat In ingList
+        '    phIngredients.Controls.Add(New LiteralControl(String.Format("<tr><td>" & "{0:00}", zutat.id) & " - " & zutat.name & " - " & String.Format("{0:0.00}", zutat.preis) & "</td></tr>"))
+        'Next
 
     End Sub
 
-    Protected Sub saveDishButtonClick() Handles saveDishButton.Click
-        Dim ingredientsList As String() = Split(ingBox.Text, ", ")
+    Public Sub saveImage()
+        Dim fileOK As Boolean = False
+        If FileUpload1.HasFile Then
+            Try
+                Dim path As String = Server.MapPath("~/UserUploadImages/" & FileUpload1.FileName)
+
+                Dim fileExtension As String
+                fileExtension = System.IO.Path.
+                    GetExtension(FileUpload1.FileName).ToLower()
+                Dim allowedExtensions As String() =
+                    {".jpg", ".jpeg", ".png", ".gif"}
+                For i As Integer = 0 To allowedExtensions.Length - 1
+                    If fileExtension = allowedExtensions(i) Then
+                        fileOK = True
+                    End If
+                Next
+                If fileOK Then
+                    FileUpload1.SaveAs(path)
+                    Label1.Text = "File name: " &
+                       FileUpload1.PostedFile.FileName & "<br>" &
+                       "File Size: " &
+                       FileUpload1.PostedFile.ContentLength & " kb<br>" &
+                       "Content type: " &
+                       FileUpload1.PostedFile.ContentType
+                End If
+
+            Catch ex As Exception
+                Label3.Text = "ERROR: " & ex.Message.ToString()
+            End Try
+        Else
+            Label3.Text = "You have not specified a file."
+        End If
+    End Sub
+
+    Protected Sub buttonSave_Click() Handles buttonSave.Click
+        Dim atLeastOneRowSelected As Boolean = False
         Dim zuList As New List(Of Zutat)
-        For Each num As String In ingredientsList
-            zuList.Add(manager.getZutat(Val(num)))
+        For Each row As GridViewRow In gridViewIngredients.Rows
+            Dim cb As CheckBox = row.FindControl("ingredientselector")
+            If cb IsNot Nothing AndAlso cb.Checked Then
+                atLeastOneRowSelected = True
+                Dim s As String = row.Cells(0).Text
+                zuList.Add(manager.getZutat(Val(s)))
+            End If
         Next
         Dim price As Double = calculatePrice(zuList)
-        Dim gericht As New Gericht(dishText.Text, descBox.Text, Upload.FileName, showCheck.Checked, price)
+        Dim gericht As New Gericht(dishText.Text, descBox.Text, FileUpload1.FileName, showCheck.Checked, price)
 
         gericht.zutaten = zuList
         manager.updateOrAddGericht(gericht)
+        lblSucess.Text = "Gericht hinzugefügt"
 
     End Sub
 
@@ -35,5 +75,6 @@
         price = price + (price * (5 / 100))
         Return price
     End Function
+
 
 End Class

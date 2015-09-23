@@ -3,6 +3,8 @@ Public Class UpdateDishControl
     Inherits System.Web.UI.UserControl
 
 
+
+
     'Dim manager As DatenbankManager = DatenbankManager.Instance
     'Dim identifier As Integer
     'Dim ingredientList As String
@@ -67,4 +69,6 @@ Public Class UpdateDishControl
         e.NewValues("Photo") = photo.FileName
 
     End Sub
+
+
 End Class

@@ -76,6 +76,7 @@
     </tr>
 </table>
 <asp:RequiredFieldValidator ID="nameValidator" runat="server" ErrorMessage="Bitte Namen angeben" ControlToValidate="dishText" /><br />
+<asp:RequiredFieldValidator ID="uploadValidator" runat="server" ErrorMessage="Bitte Bild angeben" ControlToValidate="FileUpload1" />
 <%--<asp:RequiredFieldValidator ID="ingredientsValidator" runat="server" ErrorMessage="Keine Zutatenliste angegeben" ControlToValidate="ingBox" ValidationGroup="ingLstVals" /><br />
 <asp:RegularExpressionValidator ID="ingredientsContentsValidator" runat="server" ErrorMessage="Zutatenliste muss aus Zahlen und Kommas bestehen"
                 ControlToValidate="ingBox" ValidationExpression="([0-9]+, )*|[0-9]+" ValidationGroup="ingLstVals" />--%>

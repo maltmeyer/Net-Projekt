@@ -147,4 +147,13 @@ Partial Public Class WebUserControl1
     '''Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
     '''</remarks>
     Protected WithEvents nameValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''uploadValidator-Steuerelement
+    '''</summary>
+    '''<remarks>
+    '''Automatisch generiertes Feld
+    '''Zum Ändern Felddeklaration aus der Designerdatei in eine Code-Behind-Datei verschieben.
+    '''</remarks>
+    Protected WithEvents uploadValidator As Global.System.Web.UI.WebControls.RequiredFieldValidator
 End Class

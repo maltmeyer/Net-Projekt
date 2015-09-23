@@ -4,12 +4,6 @@
     Dim manager As DatenbankManager = DatenbankManager.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Dim ingList As List(Of Zutat) = manager.getZutaten()
-        'phIngredients.Controls.Clear()
-
-        'For Each zutat As Zutat In ingList
-        '    phIngredients.Controls.Add(New LiteralControl(String.Format("<tr><td>" & "{0:00}", zutat.id) & " - " & zutat.name & " - " & String.Format("{0:0.00}", zutat.preis) & "</td></tr>"))
-        'Next
 
     End Sub
 
@@ -63,6 +57,8 @@
 
         gericht.zutaten = zuList
         manager.updateOrAddGericht(gericht)
+        saveImage()
+
         lblSucess.Text = "Gericht hinzugefügt"
 
     End Sub
